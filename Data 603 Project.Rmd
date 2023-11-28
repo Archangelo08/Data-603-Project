@@ -1,0 +1,12 @@
+---
+title: "Data 603 Project"
+author: "Ahuchogu, Divine | Ouano, Archangelo"
+date: "2023-11-28"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
