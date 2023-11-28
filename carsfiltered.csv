@@ -1,0 +1,353 @@
+brand,model,model_year,Mileage(mi),fuel_type,engine,transmission,ext_col,accident,Accident_var,clean_title,price
+Toyota,Supra 3.0 Premium,2021,12500,Gasoline,382.0HP 3.0L Straight 6 Cylinder Engine Gasoline Fuel,A/T,Yellow,None reported,0,Yes,53500
+Nissan,350Z Enthusiast,2003,74000,Gasoline,287.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Purple,None reported,0,Yes,11000
+Nissan,Sentra SR,2016,96541,Gasoline,1.8 Liter,Automatic,Blue,None reported,0,No,13998
+Honda,Passport Elite,2023,2978,Gasoline,3.5 Liter SOHC,Automatic,Lunar Silver Metallic,None reported,0,No,45498
+Toyota,Avalon Touring,2016,89148,Gasoline,268.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,17500
+Honda,CR-V EX-L,2016,73549,Gasoline,2.4L I4 16V GDI DOHC,Automatic CVT,Mountain Air Metallic,At least 1 accident or damage reported,1,No,20848
+Nissan,Rogue SV,2023,1094,Gasoline,1.5L I3 12V GDI DOHC Turbo,Automatic CVT,Caspian Blue,None reported,0,No,30999
+Toyota,GR Corolla Circuit Edition,2023,952,Gasoline,300.0HP 1.6L 3 Cylinder Engine Gasoline Fuel,6-Speed M/T,Silver,None reported,0,Yes,49950
+Toyota,Corolla LE,2003,124756,Gasoline,130.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,M/T,Beige,At least 1 accident or damage reported,1,Yes,4995
+Nissan,GT-R Premium,2010,15600,Gasoline,485.0HP 3.8L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,White,None reported,0,Yes,69500
+Toyota,Corolla LE,2010,72348,Gasoline,132.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,A/T,Red,At least 1 accident or damage reported,1,Yes,9995
+Nissan,Armada SL,2021,67800,Gasoline,400.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,7-Speed A/T,Silver,At least 1 accident or damage reported,1,Yes,36500
+Toyota,4Runner SR5,2022,28377,Gasoline,4.0L V6 24V MPFI DOHC,5-Speed Automatic,Silver,None reported,0,No,36999
+Toyota,Tacoma PreRunner,2008,202055,Gasoline,236.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,At least 1 accident or damage reported,1,Yes,8500
+Toyota,Land Cruiser Base,1997,213000,Gasoline,212.0HP 4.5L Straight 6 Cylinder Engine Gasoline Fuel,4-Speed A/T,White,None reported,0,Yes,26500
+Nissan,GT-R Premium,2020,16010,Gasoline,565.0HP 3.8L V6 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,114000
+Nissan,GT-R Premium,2017,37800,Gasoline,565.0HP 3.8L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Orange,None reported,0,Yes,149500
+Nissan,Titan XD SV,2020,10001,Gasoline,5.6L V8 32V GDI DOHC,9-Speed Automatic,Black,None reported,0,Yes,47214
+Toyota,Land Cruiser,2016,50361,Gasoline,5.7 Liter,Automatic,Silver,None reported,0,No,65998
+Honda,S2000 CR,2008,82323,Gasoline,237.0HP 2.2L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,Black,None reported,0,Yes,28500
+Toyota,Highlander XLE,2020,61341,Gasoline,3.5L V6 24V PDI DOHC,8-Speed Automatic,Midnight Black Metallic,At least 1 accident or damage reported,1,No,34084
+Honda,Civic LX,2016,96473,Gasoline,2.0L I4 16V MPFI DOHC,Automatic CVT,Black,None reported,0,No,15599
+Nissan,NV Passenger NV3500 HD SL V8,2017,46496,Gasoline,375.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,41000
+Toyota,Land Cruiser Base,2008,175000,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Black,At least 1 accident or damage reported,1,Yes,37900
+Toyota,Land Cruiser Base,2016,61500,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,8-Speed A/T,White,None reported,0,Yes,63500
+Toyota,Highlander Limited,2022,24001,Gasoline,3.5L V6 24V PDI DOHC,8-Speed Automatic,Wind Chill Pearl,None reported,0,No,47498
+Nissan,Armada SL,2022,14735,Gasoline,5.6 Liter,Automatic,White,None reported,0,No,50998
+Toyota,Camry Hybrid LE,2022,14048,Hybrid,2.5L I4 16V PDI DOHC Hybrid,Automatic CVT,Black,None reported,0,No,29999
+Honda,CR-V EX,2003,224000,Gasoline,160.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,M/T,Black,None reported,0,Yes,3900
+Nissan,Titan XD S,2019,53677,Gasoline,390.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,7-Speed A/T,Red,None reported,0,Yes,27900
+Toyota,Highlander XLE,2021,67039,Gasoline,3.5L V6 24V PDI DOHC,8-Speed Automatic,Blue,None reported,0,No,34645
+Honda,Ridgeline RTL-E,2021,14442,Gasoline,280.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,9-Speed A/T,White,None reported,0,Yes,38500
+Toyota,Highlander SE,2018,53607,Gasoline,3.5L V6 24V PDI DOHC,8-Speed Automatic,Midnight Black Metallic,At least 1 accident or damage reported,1,No,31853
+Toyota,Tundra Hybrid TRD Pro,2022,7000,Hybrid,437.0HP 3.4L V6 Cylinder Engine Gas/Electric Hybrid,10-Speed A/T,Orange,None reported,0,Yes,75500
+Toyota,Tundra Hybrid TRD Pro,2022,19000,Hybrid,437.0HP 3.4L V6 Cylinder Engine Gas/Electric Hybrid,10-Speed A/T,Orange,None reported,0,Yes,71000
+Toyota,RAV4 Hybrid XLE,2019,54000,Hybrid,219.0HP 2.5L 4 Cylinder Engine Gas/Electric Hybrid,CVT Transmission,Gray,None reported,0,Yes,33000
+Nissan,350Z Enthusiast,2005,130307,Gasoline,287.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Blue,None reported,0,Yes,9950
+Honda,Civic LX,2003,160265,Gasoline,115.0HP 1.7L 4 Cylinder Engine Gasoline Fuel,A/T,White,At least 1 accident or damage reported,1,Yes,3000
+Toyota,Yaris Base,2010,138071,Gasoline,106.0HP 1.5L 4 Cylinder Engine Gasoline Fuel,5-Speed M/T,Red,None reported,0,Yes,5000
+Toyota,4Runner Limited,2019,48156,Gasoline,4.0L V6 24V MPFI DOHC,5-Speed Automatic,Midnight Black Metallic,None reported,0,No,40368
+Nissan,370Z NISMO,2010,29000,Gasoline,350.0HP 3.7L V6 Cylinder Engine Gasoline Fuel,M/T,Silver,None reported,0,Yes,29000
+Honda,Accord EX-L,2009,167300,Gasoline,190.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,5-Speed A/T,Silver,None reported,0,Yes,6250
+Toyota,Highlander Hybrid Limited,2006,264893,Hybrid,208.0HP 3.3L V6 Cylinder Engine Gas/Electric Hybrid,A/T,Gold,At least 1 accident or damage reported,1,Yes,5000
+Toyota,Tundra SR5 Access Cab,2005,209500,Gasoline,282.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,5-Speed A/T,Blue,None reported,0,Yes,8500
+Toyota,Tundra Limited,2020,44101,Gasoline,5.7L V8 32V MPFI DOHC,6-Speed Automatic,Gray,None reported,0,Yes,45423
+Nissan,370Z Base,2009,79893,Gasoline,332.0HP 3.7L V6 Cylinder Engine Gasoline Fuel,7-Speed A/T,Silver,None reported,0,Yes,15900
+Toyota,Sequoia Platinum,2014,124838,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,33000
+Nissan,NV Passenger NV3500 HD SL V8,2020,14353,Gasoline,375.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,63900
+Nissan,Xterra S,2007,132272,Gasoline,261.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,M/T,Gray,At least 1 accident or damage reported,1,Yes,6700
+Nissan,Z Proto Spec,2023,535,Gasoline,400.0HP 3.0L V6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Yellow,None reported,0,Yes,65990
+Nissan,350Z Touring,2006,84200,Gasoline,300.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Silver,None reported,0,Yes,10200
+Toyota,Sequoia SR5,2013,138700,E85 Flex Fuel,381.0HP 5.7L 8 Cylinder Engine Flex Fuel Capability,A/T,White,At least 1 accident or damage reported,1,Yes,18800
+Toyota,Tundra SR5,2022,29322,Gasoline,3.4L V6 24V PDI DOHC Twin Turbo,10-Speed Automatic,Gray,None reported,0,No,44999
+Honda,Ridgeline RTL-E,2019,26998,Gasoline,3.5L V6 24V GDI SOHC,6-Speed Automatic,Black,None reported,0,No,35557
+Nissan,Murano SL,2005,125500,Gasoline,245.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,CVT Transmission,Black,None reported,0,Yes,3950
+Nissan,Juke SV,2011,137483,Gasoline,188.0HP 1.6L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,White,None reported,0,Yes,3200
+Toyota,Highlander Hybrid Limited Platinum,2017,34049,Hybrid,3.5L V6 24V PDI DOHC Hybrid,Automatic CVT,Shoreline Blue Pearl,None reported,0,No,37999
+Toyota,Camry LE,2005,108000,Gasoline,160.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,5-Speed A/T,Beige,None reported,0,Yes,7850
+Toyota,Sienna LE,2015,76000,Gasoline,266.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Red,None reported,0,Yes,18300
+Toyota,Supra A91-MT Edition,2023,1500,Gasoline,382.0HP 3.0L Straight 6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Gray,None reported,0,Yes,84900
+Nissan,Maxima SV,2012,42259,Gasoline,290.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,CVT Transmission,Black,At least 1 accident or damage reported,1,Yes,17000
+Toyota,Camry Solara SLE V6,2006,159890,Gasoline,225.0HP 3.3L V6 Cylinder Engine Gasoline Fuel,A/T,Blue,At least 1 accident or damage reported,1,Yes,6500
+Honda,Pilot EX,2004,184000,Gasoline,240.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Blue,At least 1 accident or damage reported,1,Yes,10500
+Toyota,GR86 Premium,2023,1075,Gasoline,228.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,White,None reported,0,Yes,35000
+Nissan,Armada Platinum,2017,92000,Gasoline,390.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,7-Speed A/T,Black,None reported,0,Yes,20900
+Toyota,Sequoia Platinum,2011,173456,E85 Flex Fuel,381.0HP 5.7L 8 Cylinder Engine Flex Fuel Capability,6-Speed A/T,Black,At least 1 accident or damage reported,1,Yes,16000
+Toyota,Avalon XLE,2015,90000,Gasoline,268.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed A/T,White,None reported,0,Yes,18200
+Toyota,Supra A91 Edition,2021,6400,Gasoline,382.0HP 3.0L Straight 6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Gray,None reported,0,Yes,68000
+Toyota,Land Cruiser Base,2016,91000,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,68500
+Toyota,Tundra SR5 Access Cab,2004,229450,Gasoline,240.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,A/T,Gray,None reported,0,Yes,8250
+Nissan,Rogue S,2022,21212,Gasoline,1.5L I3 12V GDI DOHC Turbo,Automatic CVT,Gun Metallic,None reported,0,No,28906
+Toyota,Highlander Base,2001,231581,Gasoline,220.0HP 3.0L V6 Cylinder Engine Gasoline Fuel,A/T,Beige,None reported,0,Yes,4300
+Toyota,Highlander Hybrid XLE,2019,69350,Hybrid,306.0HP 3.5L V6 Cylinder Engine Gas/Electric Hybrid,A/T,Black,None reported,0,Yes,36000
+Toyota,Camry Hybrid Base,2007,53249,Hybrid,147.0HP 2.4L 4 Cylinder Engine Gas/Electric Hybrid,A/T,Silver,At least 1 accident or damage reported,1,Yes,9250
+Toyota,Sequoia SR5,2023,1539,Hybrid,3.4L V6 24V PDI DOHC Twin Turbo Hybrid,Automatic,Green,At least 1 accident or damage reported,1,Yes,76373
+Nissan,Rogue SL,2016,97726,Gasoline,"2.5L I-4 DOHC, variable valve control, regular unleaded, engine",Variable,Gun Metallic,At least 1 accident or damage reported,1,No,15998
+Nissan,GT-R Premium,2010,46100,Gasoline,485.0HP 3.8L V6 Cylinder Engine Gasoline Fuel,6-Speed A/T,Blue,None reported,0,Yes,72999
+Toyota,Highlander XLE,2018,61454,Gasoline,295.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,31000
+Toyota,Sequoia Limited,2023,8200,Hybrid,437.0HP 3.4L V6 Cylinder Engine Gas/Electric Hybrid,10-Speed A/T,Brown,None reported,0,Yes,78900
+Toyota,Sequoia Limited,2012,150900,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,17500
+Toyota,Camry Hybrid LE,2022,20400,Hybrid,208.0HP 2.5L 4 Cylinder Engine Gas/Electric Hybrid,CVT Transmission,White,None reported,0,Yes,29900
+Toyota,Tundra Hybrid Limited,2023,10748,Hybrid,3.4L V6 24V PDI DOHC Twin Turbo Hybrid,Automatic,Midnight Black Metallic,None reported,0,No,63100
+Nissan,Armada Platinum,2018,108206,Gasoline,5.6 Liter,Automatic,White,At least 1 accident or damage reported,1,No,26498
+Honda,Civic Si,2012,47245,Gasoline,201.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,White,None reported,0,Yes,19600
+Nissan,370Z Touring,2009,37500,Gasoline,332.0HP 3.7L V6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Silver,None reported,0,Yes,21500
+Nissan,Versa 1.8 S,2011,109902,Gasoline,122.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,A/T,Blue,None reported,0,Yes,4500
+Toyota,Matrix XRS,2003,143600,Gasoline,180.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,Black,None reported,0,Yes,4199
+Toyota,Camry SE,2011,177702,Gasoline,179.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,A/T,Gray,At least 1 accident or damage reported,1,Yes,7700
+Toyota,4Runner Trail,2016,117780,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Gray,None reported,0,Yes,27750
+Nissan,Armada Platinum,2018,42833,Gasoline,390.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Blue,None reported,0,Yes,37000
+Toyota,Tundra SR,2018,51000,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,38000
+Nissan,Frontier SL,2011,103400,Gasoline,261.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Gray,At least 1 accident or damage reported,1,Yes,17000
+Honda,Insight EX,2020,64200,Hybrid,151.0HP 1.5L 4 Cylinder Engine Gas/Electric Hybrid,CVT Transmission,White,At least 1 accident or damage reported,1,Yes,20499
+Toyota,Tundra SR5,2021,33455,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Green,None reported,0,Yes,44750
+Nissan,Titan SE,2009,127600,E85 Flex Fuel,317.0HP 5.6L 8 Cylinder Engine Flex Fuel Capability,A/T,Brown,None reported,0,Yes,19500
+Toyota,Supra 3.0 Premium,2022,24850,Gasoline,382.0HP 3.0L Straight 6 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,53568
+Nissan,Pathfinder SL,2015,115000,Gasoline,260.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Gray,None reported,0,Yes,11995
+Toyota,Tacoma TRD Pro,2019,40698,Gasoline,3.5L V6 24V PDI DOHC,6-Speed,Super White,None reported,0,No,42886
+Honda,S2000 Base,2002,110500,Gasoline,240.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,Yellow,None reported,0,Yes,27000
+Toyota,Corolla iM Base,2017,41932,Gasoline,137.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,Black,None reported,0,Yes,18700
+Toyota,Tundra 1794,2020,67400,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,47500
+Toyota,Sequoia Limited,2006,190656,Gasoline,273.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,A/T,Black,At least 1 accident or damage reported,1,Yes,8900
+Nissan,370Z Base,2013,106700,Gasoline,332.0HP 3.7L V6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Red,None reported,0,Yes,17500
+Nissan,370Z Touring,2012,65000,Gasoline,332.0HP 3.7L V6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Gray,None reported,0,Yes,21500
+Toyota,4Runner TRD Pro,2016,98000,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Black,At least 1 accident or damage reported,1,Yes,36000
+Toyota,Camry Hybrid XLE,2014,94448,Hybrid,200.0HP 2.5L 4 Cylinder Engine Gas/Electric Hybrid,A/T,Silver,None reported,0,Yes,15999
+Toyota,Sequoia Limited,2011,183000,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Gold,None reported,0,Yes,16000
+Toyota,Sequoia Platinum,2023,325,Hybrid,437.0HP 3.4L V6 Cylinder Engine Gas/Electric Hybrid,10-Speed A/T,Blue,None reported,0,Yes,84997
+Toyota,FJ Cruiser Base,2007,179000,Gasoline,239.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,At least 1 accident or damage reported,1,Yes,17900
+Toyota,Corolla Hybrid LE,2022,44459,Hybrid,121.0HP 1.8L 4 Cylinder Engine Gas/Electric Hybrid,A/T,Silver,None reported,0,Yes,22945
+Toyota,Land Cruiser Base,1998,160000,Gasoline,230.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,4-Speed A/T,White,At least 1 accident or damage reported,1,Yes,12490
+Toyota,Tacoma PreRunner,2013,65000,Gasoline,159.0HP 2.7L 4 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,20500
+Toyota,Camry LE,1999,86111,Gasoline,133.0HP 2.2L 4 Cylinder Engine Gasoline Fuel,A/T,Gold,At least 1 accident or damage reported,1,Yes,3500
+Honda,Civic Type R Touring,2018,72900,Gasoline,306.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,Black,At least 1 accident or damage reported,1,Yes,35500
+Nissan,Rogue SL,2019,29558,Gasoline,2.5L I4 16V MPFI DOHC,Automatic CVT,Magnetic Black,None reported,0,Yes,25884
+Toyota,Highlander Limited Platinum,2015,135140,Gasoline,270.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,23500
+Toyota,Tacoma SR,2020,27363,Gasoline,278.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed A/T,Gray,None reported,0,Yes,35000
+Honda,Pilot Elite,2021,42653,Gasoline,3.5L V6 24V GDI SOHC,9-Speed Automatic,Gray,None reported,0,No,38998
+Toyota,Avalon XLS,2004,90625,Gasoline,210.0HP 3.0L V6 Cylinder Engine Gasoline Fuel,A/T,Gray,None reported,0,Yes,5500
+Toyota,Prius Touring,2009,142500,Hybrid,76.0HP 1.5L 4 Cylinder Engine Gas/Electric Hybrid,A/T,Blue,None reported,0,Yes,6999
+Nissan,NV200 SV,2017,16700,Gasoline,131.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,26500
+Toyota,RAV4 TRD Off Road,2020,46500,Gasoline,203.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,8-Speed A/T,White,None reported,0,Yes,35200
+Honda,S2000 Base,2000,26900,Gasoline,240.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,M/T,Silver,None reported,0,Yes,35000
+Toyota,Sequoia TRD Pro,2023,600,Hybrid,437.0HP 3.4L V6 Cylinder Engine Gas/Electric Hybrid,10-Speed A/T,Orange,None reported,0,Yes,91995
+Nissan,Titan S,2017,20220,Gasoline,390.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,7-Speed A/T,White,None reported,0,Yes,32324
+Honda,Accord EX-L 2.0T,2019,40069,Gasoline,252.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,A/T,White,At least 1 accident or damage reported,1,Yes,27500
+Nissan,Xterra S,2008,100900,Gasoline,261.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,6999
+Nissan,Frontier SV,2013,67000,Gasoline,261.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Blue,None reported,0,Yes,15500
+Nissan,NV200 S,2019,52000,Gasoline,131.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,Black,At least 1 accident or damage reported,1,Yes,19500
+Nissan,Versa 1.8 S,2011,165000,Gasoline,122.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,4000
+Honda,Ridgeline Black Edition,2017,91600,Gasoline,280.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed A/T,Black,None reported,0,Yes,26000
+Toyota,4Runner SR5,2019,91843,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Blue,At least 1 accident or damage reported,1,Yes,30500
+Nissan,NV Passenger NV3500 HD SV V8,2015,86000,Gasoline,317.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,29500
+Nissan,Armada SL,2019,59980,Gasoline,390.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,7-Speed A/T,Silver,None reported,0,Yes,29000
+Toyota,Sequoia TRD Pro,2020,37428,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,White,None reported,0,Yes,61599
+Honda,Crosstour EX-L,2012,90742,Gasoline,192.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,A/T,Gray,None reported,0,Yes,12980
+Toyota,FJ Cruiser Base,2014,86000,Gasoline,260.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Blue,None reported,0,Yes,41500
+Toyota,Tundra SR5,2019,56000,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Blue,None reported,0,Yes,42000
+Honda,Civic Si Base,2020,6025,Gasoline,205.0HP 1.5L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,Gray,None reported,0,Yes,27500
+Honda,Ridgeline RTL-E,2022,9642,Gasoline,3.5L V6 24V GDI SOHC,9-Speed Automatic,Radiant Red Metallic II,None reported,0,No,38999
+Toyota,FJ Cruiser Base,2007,162000,Gasoline,239.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Black,None reported,0,Yes,23977
+Nissan,GT-R Premium,2009,60747,Gasoline,480.0HP 3.8L V6 Cylinder Engine Gasoline Fuel,6-Speed A/T,White,At least 1 accident or damage reported,1,Yes,71999
+Nissan,GT-R Black Edition,2015,16850,Gasoline,545.0HP 3.8L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,White,None reported,0,Yes,95000
+Nissan,Pathfinder Platinum,2014,112600,Gasoline,260.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,CVT Transmission,Black,At least 1 accident or damage reported,1,Yes,13000
+Nissan,GT-R Premium,2009,88000,Gasoline,480.0HP 3.8L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,White,At least 1 accident or damage reported,1,Yes,57000
+Nissan,370Z NISMO Tech,2016,42600,Gasoline,350.0HP 3.7L V6 Cylinder Engine Gasoline Fuel,7-Speed A/T,Red,At least 1 accident or damage reported,1,Yes,31950
+Honda,Pilot Black Edition,2022,22564,Gasoline,3.5 Liter,Automatic,Platinum White Pearl,None reported,0,No,44998
+Toyota,4Runner Limited,2004,186117,Gasoline,245.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,13000
+Nissan,GT-R Premium,2017,31150,Gasoline,565.0HP 3.8L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Orange,None reported,0,Yes,113000
+Nissan,Frontier SV,2012,96600,Gasoline,261.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Beige,At least 1 accident or damage reported,1,Yes,17000
+Toyota,Highlander LE Plus,2015,198000,Gasoline,270.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,14000
+Honda,Odyssey Elite,2019,82000,Gasoline,280.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,10-Speed A/T,Silver,None reported,0,Yes,32471
+Toyota,GR86 Base,2022,13400,Gasoline,228.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,6-Speed A/T,Silver,None reported,0,Yes,33499
+Toyota,Sequoia Limited,2017,67000,E85 Flex Fuel,381.0HP 5.7L 8 Cylinder Engine Flex Fuel Capability,6-Speed A/T,Silver,None reported,0,Yes,37999
+Toyota,Camry Hybrid XLE,2018,69641,Hybrid,208.0HP 2.5L 4 Cylinder Engine Gas/Electric Hybrid,CVT Transmission,White,At least 1 accident or damage reported,1,Yes,23995
+Toyota,GR86 Premium,2022,1275,Gasoline,228.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,6-Speed A/T,Blue,None reported,0,Yes,47999
+Toyota,Tundra Hybrid Capstone,2023,200,Hybrid,437.0HP 3.4L V6 Cylinder Engine Gas/Electric Hybrid,10-Speed A/T,Blue,None reported,0,Yes,82500
+Toyota,Sequoia Limited,2005,86000,Gasoline,282.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,22500
+Nissan,Titan SV,2023,6200,Gasoline,400.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,9-Speed A/T,Black,None reported,0,Yes,48000
+Toyota,RAV4 Base,2010,123620,Gasoline,179.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,4-Speed A/T,Black,At least 1 accident or damage reported,1,Yes,9900
+Honda,Civic Sport,2022,25420,Gasoline,158.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,Red,None reported,0,Yes,24500
+Nissan,Cube 1.8 S,2010,72500,Gasoline,122.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,Brown,None reported,0,Yes,6750
+Toyota,4Runner Limited,2018,95000,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,33000
+Toyota,FJ Cruiser Base,2007,193827,Gasoline,239.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,14950
+Toyota,Camry Solara SLE,2007,37216,Gasoline,210.0HP 3.3L V6 Cylinder Engine Gasoline Fuel,A/T,Red,At least 1 accident or damage reported,1,Yes,14995
+Toyota,Sequoia SR5,2002,244200,Gasoline,240.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,A/T,White,At least 1 accident or damage reported,1,Yes,3950
+Toyota,Highlander XLE,2019,81301,Gasoline,3.5L V6 24V PDI DOHC,8-Speed Automatic,Black,None reported,0,Yes,30275
+Toyota,Highlander XLE,2023,8727,Gasoline,2.4L I4 16V PDI DOHC Turbo,8-Speed Automatic,Ruby Flare Pearl,None reported,0,No,44596
+Toyota,4Runner TRD Off Road,2019,79500,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,33333
+Toyota,Highlander Limited,2008,165520,Gasoline,270.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Gray,At least 1 accident or damage reported,1,Yes,9000
+Toyota,Avalon Limited,2008,111300,Gasoline,268.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Gold,None reported,0,Yes,7900
+Toyota,Avalon Limited,2022,16156,Gasoline,3.5L V6 24V PDI DOHC,8-Speed Automatic,Blueprint,None reported,0,No,39390
+Toyota,Tacoma Base,2020,27256,Gasoline,3.5 Liter,6 Speed At/Mt,Midnight Black Metallic,None reported,0,No,42998
+Nissan,Xterra Pro-4X,2011,183000,Gasoline,261.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Black,At least 1 accident or damage reported,1,Yes,12000
+Nissan,Titan SV,2021,27598,Gasoline,5.6L V8 32V GDI DOHC,9-Speed Automatic,Black,None reported,0,No,39884
+Nissan,Murano SL,2010,138700,Gasoline,265.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,CVT Transmission,Gray,At least 1 accident or damage reported,1,Yes,7000
+Toyota,Tundra Limited,2022,3959,Gasoline,389.0HP 3.4L V6 Cylinder Engine Gasoline Fuel,10-Speed A/T,Blue,None reported,0,Yes,55000
+Toyota,FJ Cruiser Base,2014,92000,Gasoline,260.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Beige,None reported,0,Yes,27500
+Nissan,Murano SV,2021,23677,Gasoline,3.5L V6 24V MPFI DOHC,Automatic CVT,Sunset Drift Chromaflair,None reported,0,No,29510
+Toyota,Camry Solara SLE,2007,138000,Gasoline,210.0HP 3.3L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,White,None reported,0,Yes,6800
+Toyota,FJ Cruiser Base,2013,53000,Gasoline,260.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Blue,None reported,0,Yes,36740
+Toyota,4Runner SR5 Premium,2023,1400,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,46500
+Toyota,Sienna XLE Limited,2007,112630,Gasoline,266.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Silver,At least 1 accident or damage reported,1,Yes,11500
+Toyota,Tundra Limited,2010,89400,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,26900
+Toyota,Tundra SR,2018,74000,E85 Flex Fuel,381.0HP 5.7L 8 Cylinder Engine Flex Fuel Capability,6-Speed A/T,Beige,At least 1 accident or damage reported,1,Yes,38000
+Nissan,Titan SL,2021,95993,Gasoline,5.6L V8 32V GDI DOHC,9-Speed Automatic,White,None reported,0,Yes,32612
+Toyota,Tundra SR5,2015,99000,Gasoline,310.0HP 4.6L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Gray,None reported,0,Yes,27000
+Toyota,4Runner SR5,2006,135000,Gasoline,236.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,16900
+Nissan,Frontier SE Crew Cab,2006,134000,Gasoline,265.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Gray,At least 1 accident or damage reported,1,Yes,8500
+Nissan,Rogue Sport S,2021,24000,Gasoline,141.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,A/T,Gray,None reported,0,Yes,25500
+Toyota,4Runner SR5,2016,101900,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Black,None reported,0,Yes,29000
+Toyota,Celica GT,2001,122000,Gasoline,140.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,5-Speed M/T,Blue,None reported,0,Yes,7800
+Nissan,350Z Enthusiast,2007,117000,Gasoline,306.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,At least 1 accident or damage reported,1,Yes,9975
+Nissan,Altima 2.5 SL,2012,91545,Gasoline,175.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,Silver,None reported,0,Yes,8999
+Toyota,Camry XLE,2007,59700,Gasoline,268.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed A/T,Green,None reported,0,Yes,9500
+Nissan,Altima 2.5 SV,2020,22295,Gasoline,2.5L I4 16V GDI DOHC,Automatic CVT,Scarlet Ember,None reported,0,No,23599
+Toyota,Sequoia Platinum,2023,1025,Hybrid,437.0HP 3.4L V6 Cylinder Engine Gas/Electric Hybrid,10-Speed A/T,Black,None reported,0,Yes,85000
+Toyota,Highlander Limited,2020,53550,Gasoline,3.5L V6 24V PDI DOHC,8-Speed Automatic,Blue,None reported,0,Yes,39687
+Honda,Odyssey EX-L,2022,18385,Gasoline,280.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,10-Speed A/T,Red,None reported,0,Yes,37950
+Nissan,350Z Touring,2008,123500,Gasoline,306.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Gray,At least 1 accident or damage reported,1,Yes,13500
+Nissan,Titan XD SV,2017,80000,Gasoline,390.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,7-Speed A/T,Silver,None reported,0,Yes,23800
+Nissan,Pathfinder SL,2020,45000,Gasoline,284.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,CVT Transmission,Black,None reported,0,Yes,28999
+Nissan,Titan SV,2021,7250,Gasoline,400.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,9-Speed A/T,Black,None reported,0,Yes,38000
+Toyota,Sequoia SR5,2007,136000,Gasoline,273.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,12500
+Toyota,Land Cruiser Base,2000,209193,Gasoline,230.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,15900
+Toyota,Tundra Platinum,2023,8800,Gasoline,389.0HP 3.4L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,68500
+Nissan,Versa 1.6 SL,2015,85768,Gasoline,109.0HP 1.6L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,White,At least 1 accident or damage reported,1,Yes,8250
+Toyota,Land Cruiser Base,2010,269885,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Black,At least 1 accident or damage reported,1,Yes,22500
+Honda,Civic Sport,2021,42750,Gasoline,1.5L I4 16V GDI DOHC Turbo,Automatic CVT,Black,None reported,0,Yes,25698
+Toyota,FJ Cruiser Base,2007,102000,Gasoline,239.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Blue,None reported,0,Yes,24900
+Toyota,Avalon Limited,2006,89987,Gasoline,268.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Green,None reported,0,Yes,9499
+Toyota,4Runner Trail,2011,157000,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Black,None reported,0,Yes,23500
+Honda,CR-V Touring,2019,55100,Gasoline,1.5L I4 16V GDI DOHC Turbo,Automatic CVT,White,None reported,0,No,28324
+Toyota,Highlander Hybrid Limited,2018,62200,Hybrid,306.0HP 3.5L V6 Cylinder Engine Gas/Electric Hybrid,CVT Transmission,Brown,None reported,0,Yes,35707
+Toyota,Tacoma TRD Sport,2019,36283,Gasoline,3.5 Liter,Automatic,Barcelona Red,None reported,0,No,39598
+Nissan,GT-R Premium,2021,22185,Gasoline,3.8L V6 24V MPFI DOHC Twin Turbo,6-Speed Automatic with Auto-Shift,Bayside Blue,None reported,0,Yes,131999
+Honda,Odyssey LX,2011,185000,Gasoline,248.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Purple,None reported,0,Yes,8900
+Honda,Civic LX,2016,111000,Gasoline,158.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,A/T,Blue,None reported,0,Yes,13000
+Nissan,Pathfinder SV,2019,122009,Gasoline,3.5 Liter,Automatic,Gray,None reported,0,No,18998
+Toyota,Highlander XLE,2015,68575,Gasoline,270.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,At least 1 accident or damage reported,1,Yes,26000
+Nissan,Juke NISMO RS,2016,30700,Gasoline,215.0HP 1.6L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,Black,At least 1 accident or damage reported,1,Yes,21500
+Toyota,Land Cruiser Base,2017,65000,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,A/T,Black,At least 1 accident or damage reported,1,Yes,65000
+Toyota,Highlander Platinum,2020,41000,Gasoline,295.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,8-Speed A/T,Blue,None reported,0,Yes,38700
+Toyota,RAV4 Prime XSE,2022,7100,Plug-In Hybrid,302.0HP 2.5L 4 Cylinder Engine Plug-In Electric/Gas,A/T,Gray,None reported,0,Yes,49000
+Toyota,Highlander SE,2019,92000,Gasoline,295.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Red,At least 1 accident or damage reported,1,Yes,30000
+Honda,CR-V LX,2004,176261,Gasoline,160.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,M/T,Gray,None reported,0,Yes,3750
+Honda,Civic EX,2013,107000,Gasoline,140.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,14000
+Toyota,Tacoma Base,2011,36000,Gasoline,159.0HP 2.7L 4 Cylinder Engine Gasoline Fuel,5-Speed M/T,Gray,None reported,0,Yes,20000
+Honda,Pilot EX-L,2016,135350,Gasoline,280.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed A/T,White,At least 1 accident or damage reported,1,Yes,19900
+Toyota,4Runner SR5 Premium,2021,36180,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,36990
+Nissan,Xterra S,2012,80000,Gasoline,261.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,14800
+Toyota,4Runner Limited,2021,25882,Gasoline,"4L V-6 DOHC, VVT-i variable valve control, engine with 270HP",Automatic,Midnight Black Metallic,None reported,0,No,43837
+Toyota,Tundra SR5 Double Cab,2005,170000,Gasoline,282.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,A/T,Silver,At least 1 accident or damage reported,1,Yes,11200
+Nissan,Pathfinder S,2014,135000,Gasoline,260.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,8500
+Honda,Accord Sport,2013,405000,Gasoline,185.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,Black,None reported,0,Yes,6000
+Honda,S2000 CR,2008,44300,Gasoline,237.0HP 2.2L 4 Cylinder Engine Gasoline Fuel,M/T,Yellow,None reported,0,Yes,62000
+Toyota,Tacoma SR5,2018,65290,Gasoline,278.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed A/T,Blue,At least 1 accident or damage reported,1,Yes,26450
+Nissan,Maxima SV,2022,36466,Gasoline,3.5L V6 24V GDI DOHC,Automatic CVT,Brilliant Silver Metallic,None reported,0,No,24980
+Honda,Pilot EX-L,2016,80500,Gasoline,280.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed A/T,Gray,None reported,0,Yes,23000
+Honda,Civic Sport,2020,121212,Gasoline,1.5L I4 16V GDI DOHC Turbo,Automatic CVT,White,At least 1 accident or damage reported,1,Yes,18387
+Nissan,Maxima 3.5 SR,2019,72150,Gasoline,300.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,CVT Transmission,White,At least 1 accident or damage reported,1,Yes,26999
+Toyota,Highlander XLE,2022,4437,Gasoline,295.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Gray,None reported,0,Yes,42000
+Toyota,Corolla CE,2008,170000,Gasoline,126.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,A/T,Gray,None reported,0,Yes,5199
+Honda,Element EX,2008,122000,Gasoline,166.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,A/T,Blue,None reported,0,Yes,10500
+Honda,Prelude Type SH,2001,125000,Gasoline,200.0HP 2.2L 4 Cylinder Engine Gasoline Fuel,5-Speed M/T,Red,None reported,0,Yes,18000
+Nissan,Armada LE,2009,87130,Gasoline,317.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,A/T,Brown,None reported,0,Yes,20000
+Toyota,Camry Solara SLE,2008,73000,Gasoline,210.0HP 3.3L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Blue,At least 1 accident or damage reported,1,Yes,11500
+Honda,Odyssey EX-L,2007,170000,Gasoline,244.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,7700
+Nissan,370Z Touring,2009,133409,Gasoline,332.0HP 3.7L V6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Silver,At least 1 accident or damage reported,1,Yes,14999
+Honda,Accord EX-L,2019,62200,Gasoline,192.0HP 1.5L 4 Cylinder Engine Gasoline Fuel,A/T,White,At least 1 accident or damage reported,1,Yes,21500
+Honda,Clarity Plug-In Hybrid Base,2018,71000,Plug-In Hybrid,212.0HP 1.5L 4 Cylinder Engine Plug-In Electric/Gas,A/T,Red,At least 1 accident or damage reported,1,Yes,17500
+Toyota,Highlander XLE,2020,35000,Gasoline,295.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,36999
+Nissan,350Z Touring,2007,90000,Gasoline,306.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,M/T,White,At least 1 accident or damage reported,1,Yes,12000
+Toyota,86 Base,2020,14700,Gasoline,200.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,27350
+Honda,Accord EX-L,2014,62000,Gasoline,185.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,Gray,At least 1 accident or damage reported,1,Yes,18987
+Honda,Civic LX,2015,51300,Gasoline,143.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,5-Speed M/T,Black,None reported,0,Yes,17500
+Toyota,Venza XLE,2013,103466,Gasoline,268.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,White,At least 1 accident or damage reported,1,Yes,14200
+Toyota,Camry Hybrid Base,2011,133121,Hybrid,147.0HP 2.4L 4 Cylinder Engine Gas/Electric Hybrid,A/T,White,At least 1 accident or damage reported,1,Yes,7900
+Nissan,350Z Touring,2004,110897,Gasoline,287.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Black,At least 1 accident or damage reported,1,Yes,11500
+Nissan,Maxima SL,2007,101600,Gasoline,255.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,6700
+Toyota,Corolla S Plus,2016,68364,Gasoline,132.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,White,None reported,0,Yes,16000
+Toyota,Camry Hybrid XLE,2018,22000,Hybrid,208.0HP 2.5L 4 Cylinder Engine Gas/Electric Hybrid,A/T,White,None reported,0,Yes,29500
+Honda,Civic Sport,2020,23131,Gasoline,2.0L I4 16V MPFI DOHC,Automatic CVT,Crystal Black Pearl,At least 1 accident or damage reported,1,No,23739
+Honda,CR-V Touring,2022,20229,Gasoline,1.5L I4 16V GDI DOHC Turbo,Automatic CVT,Black,None reported,0,No,36727
+Honda,Civic EX,2012,167506,Gasoline,140.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,6500
+Toyota,4Runner 4WD,1999,267000,Gasoline,150.0HP 2.7L 4 Cylinder Engine Gasoline Fuel,5-Speed M/T,Silver,At least 1 accident or damage reported,1,Yes,8000
+Toyota,GR86 Premium,2022,1050,Gasoline,228.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,6-Speed A/T,Gray,None reported,0,Yes,40000
+Nissan,Maxima SV,2014,117000,Gasoline,290.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,White,At least 1 accident or damage reported,1,Yes,10900
+Toyota,Tundra SR5,2016,119000,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Red,None reported,0,Yes,29950
+Toyota,Tacoma TRD Sport,2020,41199,Gasoline,3.5 Liter,6 Speed Mt,Black,None reported,0,No,41598
+Toyota,Yaris L,2012,129355,Gasoline,106.0HP 1.5L 4 Cylinder Engine Gasoline Fuel,4-Speed A/T,Black,At least 1 accident or damage reported,1,Yes,7950
+Honda,Civic EX,2008,190640,Gasoline,140.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,5-Speed M/T,Silver,At least 1 accident or damage reported,1,Yes,5500
+Nissan,Pathfinder S,2020,41250,Gasoline,284.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,CVT Transmission,White,None reported,0,Yes,21865
+Toyota,Tacoma Base,2009,48750,Gasoline,159.0HP 2.7L 4 Cylinder Engine Gasoline Fuel,M/T,Brown,None reported,0,Yes,17900
+Nissan,Armada Platinum,2018,119950,Gasoline,390.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Black,None reported,0,Yes,20999
+Toyota,Tundra SR5,2015,108044,Gasoline,5.7L V8 32V MPFI DOHC,6-Speed Automatic,Black,None reported,0,Yes,31380
+Toyota,Tacoma TRD Sport,2018,84184,Gasoline,3.5 Liter,Automatic,Magnetic Gray Metallic,None reported,0,No,35998
+Nissan,Quest SL,2011,185000,Gasoline,260.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,White,At least 1 accident or damage reported,1,Yes,7500
+Toyota,Highlander Limited,2011,106000,Gasoline,270.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,White,At least 1 accident or damage reported,1,Yes,16600
+Toyota,Highlander Hybrid Limited Platinum,2019,13828,Hybrid,306.0HP 3.5L V6 Cylinder Engine Gas/Electric Hybrid,CVT Transmission,Blue,None reported,0,Yes,43000
+Toyota,Tacoma SR,2022,5020,Gasoline,278.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,36500
+Toyota,Corolla LE,2016,17500,Gasoline,132.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,A/T,Red,None reported,0,Yes,15100
+Nissan,Pathfinder Silver,2012,206000,Gasoline,266.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Black,None reported,0,Yes,5000
+Toyota,Avalon Hybrid XLE Premium,2015,161000,Hybrid,200.0HP 2.5L 4 Cylinder Engine Gas/Electric Hybrid,CVT Transmission,Blue,None reported,0,Yes,11500
+Nissan,Juke SL,2012,74750,Gasoline,188.0HP 1.6L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,Black,None reported,0,Yes,12500
+Nissan,Armada SV,2017,187141,Gasoline,390.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,16995
+Honda,Accord Hybrid Touring,2017,96400,Hybrid,212.0HP 2.0L 4 Cylinder Engine Gas/Electric Hybrid,CVT Transmission,White,At least 1 accident or damage reported,1,Yes,18500
+Nissan,Armada Platinum,2022,8400,Gasoline,400.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,7-Speed A/T,Red,None reported,0,Yes,59950
+Toyota,4Runner Limited,2014,146700,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Blue,At least 1 accident or damage reported,1,Yes,24999
+Toyota,C-HR LE,2020,14065,Gasoline,2.0L I4 16V MPFI DOHC,Automatic CVT,Gray,At least 1 accident or damage reported,1,Yes,27671
+Honda,CR-V EX,2004,156350,Gasoline,160.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,A/T,Brown,At least 1 accident or damage reported,1,Yes,3990
+Toyota,Camry XSE,2022,19361,Gasoline,3.5 Liter,Automatic,Red,None reported,0,No,38298
+Toyota,Highlander XLE,2022,31000,Gasoline,295.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Gray,None reported,0,Yes,43000
+Nissan,Juke SL,2012,72639,Gasoline,188.0HP 1.6L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,Black,At least 1 accident or damage reported,1,Yes,15000
+Honda,Pilot EX-L,2011,175000,Gasoline,250.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Black,None reported,0,Yes,9000
+Toyota,Tundra SR5,2020,26300,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Gray,At least 1 accident or damage reported,1,Yes,46199
+Honda,Fit Sport,2007,156111,Gasoline,109.0HP 1.5L 4 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Red,At least 1 accident or damage reported,1,Yes,5200
+Honda,Accord Crosstour EX-L,2010,145000,Gasoline,271.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Green,None reported,0,Yes,9000
+Toyota,RAV4 Base,2009,78500,Gasoline,179.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,4-Speed A/T,Silver,None reported,0,Yes,12000
+Toyota,Tacoma SR5,2018,25083,Gasoline,3.5L V6 24V PDI DOHC,6-Speed Automatic,Red,At least 1 accident or damage reported,1,Yes,34955
+Toyota,Highlander Hybrid Limited Platinum,2019,46000,Hybrid,306.0HP 3.5L V6 Cylinder Engine Gas/Electric Hybrid,CVT Transmission,Silver,None reported,0,Yes,40000
+Toyota,Sequoia Limited,2018,63990,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,White,At least 1 accident or damage reported,1,Yes,48000
+Honda,Civic EX,2020,13935,Gasoline,174.0HP 1.5L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,Gray,None reported,0,Yes,26000
+Honda,Accord Hybrid Base,2021,33523,Hybrid,2.0L I4 16V MPFI DOHC Hybrid,Automatic CVT,Lunar Silver Metallic,None reported,0,No,28748
+Toyota,Prius v Three,2016,86300,Hybrid,134.0HP 1.8L 4 Cylinder Engine Gas/Electric Hybrid,A/T,Gray,At least 1 accident or damage reported,1,Yes,18000
+Nissan,350Z NISMO,2008,76500,Gasoline,306.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,6-Speed M/T,Silver,At least 1 accident or damage reported,1,Yes,28000
+Toyota,4Runner SR5,2018,32199,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,35500
+Nissan,Altima 2.5 S,2003,189000,Gasoline,175.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,A/T,Silver,At least 1 accident or damage reported,1,Yes,2899
+Toyota,Land Cruiser Base,2000,265000,Gasoline,230.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,4-Speed A/T,Black,None reported,0,Yes,15500
+Honda,S2000 Base,2001,119900,Gasoline,240.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,Black,At least 1 accident or damage reported,1,Yes,18000
+Toyota,Sienna XSE 25th Anniversary,2023,500,Hybrid,245.0HP 2.5L 4 Cylinder Engine Gas/Electric Hybrid,A/T,White,None reported,0,Yes,59500
+Toyota,86 860 Special Edition,2017,87500,Gasoline,200.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,6-Speed A/T,Silver,None reported,0,Yes,20000
+Honda,Pilot EX-L,2020,44000,Gasoline,280.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,34999
+Toyota,4Runner Limited,2016,82260,Gasoline,4.0L V6 24V MPFI DOHC,5-Speed Automatic,Nautical Blue Pearl,None reported,0,Yes,31906
+Nissan,Maxima GLE,2000,194277,Gasoline,222.0HP 3.0L V6 Cylinder Engine Gasoline Fuel,A/T,Blue,At least 1 accident or damage reported,1,Yes,2300
+Honda,S2000 Base,2003,101000,Gasoline,240.0HP 2.0L 4 Cylinder Engine Gasoline Fuel,6-Speed M/T,Silver,None reported,0,Yes,28000
+Nissan,Armada LE,2005,152270,Gasoline,305.0HP 5.6L 8 Cylinder Engine Gasoline Fuel,A/T,Green,At least 1 accident or damage reported,1,Yes,6900
+Toyota,Tacoma PreRunner,2011,149000,Gasoline,236.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,18995
+Toyota,Highlander XLE,2018,74000,Gasoline,295.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,8-Speed A/T,White,None reported,0,Yes,27950
+Toyota,Tacoma PreRunner,2008,160000,Gasoline,236.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,White,At least 1 accident or damage reported,1,Yes,17000
+Honda,Element EX,2008,192000,Gasoline,166.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,5-Speed A/T,Black,At least 1 accident or damage reported,1,Yes,11000
+Nissan,Kicks S,2022,19877,Gasoline,1.6L I4 16V MPFI DOHC,Automatic CVT,Super Black,None reported,0,No,18999
+Nissan,Frontier SV,2012,65750,Gasoline,261.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Black,At least 1 accident or damage reported,1,Yes,15995
+Nissan,Xterra S,2008,227010,Gasoline,261.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,5-Speed A/T,Gray,None reported,0,Yes,3850
+Nissan,Kicks S,2022,15577,Gasoline,1.6L I4 16V MPFI DOHC,Automatic CVT,Electric Blue Metallic,None reported,0,No,19599
+Nissan,Altima 2.5 SL,2014,153350,Gasoline,182.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,A/T,Black,At least 1 accident or damage reported,1,Yes,9000
+Nissan,Pathfinder S,2017,145000,Gasoline,284.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,At least 1 accident or damage reported,1,Yes,8500
+Nissan,Murano SL,2021,43875,Gasoline,3.5L V6 24V MPFI DOHC,Automatic CVT,Magnetic Black,At least 1 accident or damage reported,1,No,29725
+Toyota,4Runner Limited,2014,65000,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Gray,None reported,0,Yes,27999
+Toyota,4Runner Limited Nightshade,2019,48842,Gasoline,4.0L V6 24V MPFI DOHC,5-Speed Automatic,White,At least 1 accident or damage reported,1,Yes,39857
+Toyota,Prius Plug-in Base,2014,106000,Plug-In Hybrid,134.0HP 1.8L 4 Cylinder Engine Plug-In Electric/Gas,A/T,Green,At least 1 accident or damage reported,1,Yes,11800
+Toyota,Matrix XR,2004,173452,Gasoline,130.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,4-Speed A/T,Silver,At least 1 accident or damage reported,1,Yes,4000
+Nissan,Murano SV,2020,47147,Gasoline,3.5L V6 24V MPFI DOHC,Automatic CVT,Brilliant Silver Metallic,None reported,0,Yes,23625
+Toyota,Camry XLE,2007,98528,Gasoline,158.0HP 2.4L 4 Cylinder Engine Gasoline Fuel,5-Speed A/T,White,At least 1 accident or damage reported,1,Yes,7450
+Toyota,Tundra SR5 Double Cab,2005,199400,Gasoline,282.0HP 4.7L 8 Cylinder Engine Gasoline Fuel,A/T,Gray,At least 1 accident or damage reported,1,Yes,8500
+Toyota,Tundra Platinum,2018,66000,Gasoline,381.0HP 5.7L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Gray,None reported,0,Yes,51000
+Nissan,Altima 2.5 S,2020,30900,Gasoline,182.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,21000
+Toyota,RAV4 SE,2016,108130,Gasoline,176.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,Gray,None reported,0,Yes,18500
+Toyota,4Runner TRD Sport,2023,11400,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Green,None reported,0,Yes,46000
+Nissan,GT-R Premium,2013,101000,Gasoline,545.0HP 3.8L V6 Cylinder Engine Gasoline Fuel,Transmission w/Dual Shift Mode,White,None reported,0,Yes,59000
+Toyota,Camry Solara SLE V6,2000,245000,Gasoline,200.0HP 3.0L V6 Cylinder Engine Gasoline Fuel,A/T,Black,At least 1 accident or damage reported,1,Yes,2500
+Toyota,4Runner Venture,2021,27000,Gasoline,270.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,48500
+Toyota,4Runner Sport,2004,220450,Gasoline,245.0HP 4.0L V6 Cylinder Engine Gasoline Fuel,A/T,Gray,None reported,0,Yes,8550
+Nissan,Juke SL,2012,115359,Gasoline,188.0HP 1.6L 4 Cylinder Engine Gasoline Fuel,A/T,Black,None reported,0,Yes,9950
+Nissan,Rogue SL,2017,148000,Gasoline,170.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,A/T,White,None reported,0,Yes,13000
+Nissan,Altima 2.5 S,2015,149800,Gasoline,182.0HP 2.5L 4 Cylinder Engine Gasoline Fuel,A/T,Black,At least 1 accident or damage reported,1,Yes,11600
+Toyota,4Runner TRD Pro,2021,35048,Gasoline,4.0L V6 24V MPFI DOHC,5-Speed Automatic,Lunar Rock,None reported,0,No,52590
+Toyota,Prius Two,2014,80354,Hybrid,134.0HP 1.8L 4 Cylinder Engine Gas/Electric Hybrid,A/T,Red,At least 1 accident or damage reported,1,Yes,13310
+Toyota,Tundra Grade,2013,92700,Gasoline,310.0HP 4.6L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Gray,At least 1 accident or damage reported,1,Yes,20800
+Honda,Civic EX,2014,82500,Gasoline,143.0HP 1.8L 4 Cylinder Engine Gasoline Fuel,CVT Transmission,Silver,None reported,0,Yes,15000
+Nissan,Murano SL,2007,120000,Gasoline,240.0HP 3.5L V6 Cylinder Engine Gasoline Fuel,A/T,Silver,None reported,0,Yes,6750
+Toyota,Sequoia SR5,2010,154860,Gasoline,310.0HP 4.6L 8 Cylinder Engine Gasoline Fuel,6-Speed A/T,Silver,None reported,0,Yes,17900
