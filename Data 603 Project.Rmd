@@ -10,3 +10,161 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+
+```{r}
+library(readr)
+# Load the dataset from water.csv
+concretedata <- read_csv("Concrete_Data_file.csv")
+
+
+head(concretedata, 6)
+tail(concretedata, 5)
+
+```
+
+
+```{r}
+
+# Check the structure of the data
+#str(concretedata)
+
+
+# Fit a multiple regression model
+fullmodel <- lm(Concrete_compressive_strength ~ Cement + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Coarse_Aggregate + Fine_Aggregate + Age_by_day, data = concretedata)
+
+summary(fullmodel)
+
+
+
+```
+
+```{r}
+
+library(olsrr)
+#To show the best model
+stepfullmodel=ols_step_both_p(fullmodel, pent =0.05, prem =0.1, details=FALSE)
+summary(stepfullmodel$model)
+
+
+```
+
+
+```{r}
+#Crosschecking again that the model is still the best
+# Fit a multiple regression model with significant variables
+bestmodel <- lm(Concrete_compressive_strength ~ Cement + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata)
+
+summary(bestmodel)
+
+```
+
+
+```{r}
+
+
+
+
+```
+
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(car)
+
+# Extract residuals from the best model
+residuals_bestmodel <- residuals(bestmodel)
+
+# 1. Linearity Assumption: Residual plots
+par(mfrow=c(2,2))
+plot(bestmodel)
+
+```
+
+
+```{r}
+
+# 2. Independence Assumption
+
+
+```
+
+
+```{r}
+
+cat("H0: The population sample follows a normal distribution.
+    \n HA: The population sample does not follow a normal distribution. \n")
+
+# 3. Normality Assumption: Shapiro-Wilk normality test
+shapiro.test(residuals_bestmodel)
+
+cat(" Given that p-value = 0.006998 which tells us that the residuals are not perfectly normally distributed, we reject the null hypothesis at 0.05 significant level.")
+
+```
+
+
+```{r}
+library(mctest)
+library(lmtest)
+library(MASS)
+
+
+cat("Null Hypothesis: The variance of the errors is constant (homoscedasticity).
+\n Alternative Hypothesis: The variance of the errors is not constant (heteroscedasticity) \n")
+
+# 4. Equal Variance Assumption (Heteroscedasticity): Breusch-Pagan test
+bptest(bestmodel)
+
+```
+
+```{r}
+
+
+
+
+
+```
+
+```{r}
+
+
+
+```
+
+```{r}
+
+#bptest(log_transformed_model)
+
+
+
+
+```
+
+```{r}
+
+
+
+
+```
+
+```{r}
+
+# 5. Multicollinearity: Variance Inflation Factors (VIF)
+vif(bestmodel)
+
+```
+
+
+```{r}
+
+# 6. Outliers: Cook’s distance and leverage
+
+
+```
+
+
+
+```{r}
+
+
+```
