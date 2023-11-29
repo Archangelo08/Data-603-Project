@@ -62,8 +62,6 @@ summary(bestmodel)
 ```{r}
 
 
-
-
 ```
 
 
@@ -81,6 +79,27 @@ plot(bestmodel)
 
 ```
 
+```{r}
+
+
+
+```
+
+
+```{r}
+
+
+```
+
+
+```{r}
+
+```
+
+```{r}
+
+
+```
 
 ```{r}
 
@@ -119,21 +138,24 @@ bptest(bestmodel)
 
 ```{r}
 
+# Create interaction terms
 
 
-
-
-```
-
-```{r}
 
 
 
 ```
 
 ```{r}
+#individual t-test
+coef_test <- summary(bestmodel)$coefficients[, c("Estimate", "Std. Error", "t value", "Pr(>|t|)")]
+coef_test
 
-#bptest(log_transformed_model)
+```
+
+```{r}
+
+#bptest
 
 
 
