@@ -44,18 +44,15 @@ knitr::opts_chunk$set(echo = TRUE)
 * Briefly describe the group member's workload distribution and responsibilities
 
 
+
+
+
+
+
 # Chapter 3: Main Results of the Analysis
 
 3.1 Results
 * What do my results indicate? Do you have any unexpected results?
-
-# Chapter 4: Conclusion and Discussion
-
-4.1 Approach
-* Overall, is the approach we took promising? Please elaborate. What different approach or variant of this approach is better?
-
-4.2 Future Work
-What should follow-up work be done next?
 
 ```{r}
 library(readr)
@@ -283,7 +280,13 @@ coef_test
 ```
 
 
+# Chapter 4: Conclusion and Discussion
 
+4.1 Approach
+* Overall, is the approach we took promising? Please elaborate. What different approach or variant of this approach is better?
+
+4.2 Future Work
+What should follow-up work be done next?
 
 
 
