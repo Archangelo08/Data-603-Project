@@ -34,8 +34,6 @@ fullmodel <- lm(Concrete_compressive_strength ~ Cement + Blast_Furnace_Slag + Fl
 
 summary(fullmodel)
 
-
-
 ```
 
 ```{r}
@@ -48,21 +46,6 @@ summary(stepfullmodel$model)
 
 ```
 
-
-```{r}
-#Crosschecking again that the model is still the best
-# Fit a multiple regression model with significant variables
-bestmodel <- lm(Concrete_compressive_strength ~ Cement + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata)
-
-summary(bestmodel)
-
-```
-
-
-```{r}
-
-
-```
 
 
 ```{r}
@@ -77,77 +60,7 @@ residuals_bestmodel <- residuals(bestmodel)
 par(mfrow=c(2,2))
 plot(bestmodel)
 
-```
-
-```{r}
-
-
-
-```
-
-
-```{r}
-
-
-```
-
-
-```{r}
-
-```
-
-```{r}
-
-
-```
-
-```{r}
-
-# 2. Independence Assumption
-
-
-```
-
-
-```{r}
-
-cat("H0: The population sample follows a normal distribution.
-    \n HA: The population sample does not follow a normal distribution. \n")
-
-# 3. Normality Assumption: Shapiro-Wilk normality test
-shapiro.test(residuals_bestmodel)
-
-cat(" Given that p-value = 0.006998 which tells us that the residuals are not perfectly normally distributed, we reject the null hypothesis at 0.05 significant level.")
-
-```
-
-
-```{r}
-
-quadmodel <- lm(Concrete_compressive_strength ~ Cement + I(Cement^2) + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata)
-summary(quadmodel)$adj.r.squared
-summary(quadmodel)
-
-bptest(quadmodel)
-
-```
-
-
-
-```{r}
-
-
-```
-
-
-```{r}
-
-cubic <- lm(Concrete_compressive_strength ~ Cement + I(Cement^2) + I(Cement^3)+ Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata)
-
-summary(cubic)$adj.r.squared
-summary(cubic)
-
-bptest(cubic)
+ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_qq_line()
 
 ```
 
@@ -157,12 +70,121 @@ library(mctest)
 library(lmtest)
 library(MASS)
 
+cat("H0: The population sample follows a normal distribution.
+    \n HA: The population sample does not follow a normal distribution. \n")
+
+# 2. Normality Assumption: Shapiro-Wilk normality test
+shapiro.test(residuals(bestmodel))
+
+cat(" Given that p-value = 0.006998 which tells us that the residuals are not perfectly normally distributed, we reject the null hypothesis at 0.05 significant level.")
+
+
+```
+
+
+```{r}
 
 cat("Null Hypothesis: heteroscedasticity is not present
 \n Alternative Hypothesis: Heteroscedasticity is present \n")
 
-# 4. Equal Variance Assumption (Heteroscedasticity): Breusch-Pagan test
+# 3. Equal Variance Assumption (Heteroscedasticity): Breusch-Pagan test
 bptest(bestmodel)
+
+```
+
+```{r}
+#quadmodel <- lm(Concrete_compressive_strength ~ Cement + I(Cement^2) + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata)
+#summary(quadmodel)$adj.r.squared
+#summary(quadmodel)
+
+#bptest(quadmodel)
+
+bc=boxcox(bestmodel,lambda=seq(-1,1))
+ 
+bestlambda=bc$x[which(bc$y==max(bc$y))]
+bestlambda
+
+bcmodel = lm((((Concrete_compressive_strength ^ 0.6767677)-1)/0.6767677) ~ Cement + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata) 
+
+summary(bcmodel)
+
+bptest(bcmodel)
+
+
+# Extract residuals from the best model
+residuals_bcmodel <- residuals(bcmodel)
+
+# 1. Linearity Assumption: Residual plots
+par(mfrow=c(2,2))
+plot(bcmodel)
+
+shapiro.test(residuals(bcmodel))
+
+ggplot(data = concretedata, aes(sample=bcmodel$residuals)) + stat_qq() + stat_qq_line()
+
+```
+
+```{r}
+#cubic <- lm(Concrete_compressive_strength ~ Cement + I(Cement^2) + I(Cement^3)+ Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata)
+
+#summary(cubic)$adj.r.squared
+#summary(cubic)
+
+#bptest(cubic)
+
+```
+
+
+```{r}
+
+
+```
+
+
+```{r}
+
+```
+
+```{r}
+
+
+```
+
+```{r}
+
+
+
+```
+
+
+```{r}
+
+
+
+```
+
+
+```{r}
+
+
+```
+
+
+
+```{r}
+
+
+```
+
+
+```{r}
+
+
+```
+
+
+```{r}
+
 
 ```
 
@@ -201,7 +223,7 @@ coef_test
 
 ```{r}
 
-# 5. Multicollinearity: Variance Inflation Factors (VIF)
+# 4. Multicollinearity: Variance Inflation Factors (VIF)
 
 
 ```
@@ -209,14 +231,13 @@ coef_test
 
 ```{r}
 
-# 6. Outliers: Cook’s distance and leverage
+# 5. Outliers: Cook’s distance and leverage
 
 
 ```
 
 
 
-```{r}
 
 
-```
+
