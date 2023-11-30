@@ -1,15 +1,61 @@
 ---
 title: "Data 603 Project"
-author: "Ahuchogu, Divine | Ouano, Archangelo"
+author: "Ahuchogu, Divine | Ouano, Archangelo - 30235358"
 date: "2023-11-28"
 output: pdf_document
+header-includes: \usepackage{fvextra} \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Chapter 1: Introduction
 
+1.1 Motivation
+
+1.1.1 Context
+* Clearly state the context and applied domain of your project
+
+1.1.2 Problem
+* What problem are we going to address?
+
+1.2 Objectives
+
+1.2.1 Overview
+* What is the overall intent of the project?
+
+1.2.2 Goals & Research Questions
+* Clearly state each of your data/visual analytics goals and research questions for data modelling. What are your expectations? Why is this project important to you?
+
+
+# Chapter 2: Methodology
+
+2.1 Data
+* Briefly describe the data set, source, how it was collected, number of attributes and a brief description of each attribute
+
+2.2 Approach
+* What approach are we going to try to address your problems? Why do we think it will work well?
+
+2.3 Workflow
+* What steps (workflow task list) are required? Which of these steps is particularly hard? What to do if the hard steps don't work out?
+
+2.4 Workload Distribution
+* Briefly describe the group member's workload distribution and responsibilities
+
+
+# Chapter 3: Main Results of the Analysis
+
+3.1 Results
+* What do my results indicate? Do you have any unexpected results?
+
+# Chapter 4: Conclusion and Discussion
+
+4.1 Approach
+* Overall, is the approach we took promising? Please elaborate. What different approach or variant of this approach is better?
+
+4.2 Future Work
+What should follow-up work be done next?
 
 ```{r}
 library(readr)
