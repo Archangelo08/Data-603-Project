@@ -167,7 +167,7 @@ plot(reg_summary$rss,type="o",pch=10,xlab="Number of Variables",ylab="RMSE")
 plot(reg_summary$adjr2,type="o",pch=10,xlab="Number of Variables",ylab="Adjusted R^2")
 ```
 
-Based on the output above, we'll be selecting 4 subset of predictor variables namely:  
+Based on the output above, we will be selecting 4 subset of predictor variables namely:  
 * Cement  
 * Blast_Furnace_Slag  
 * Water  
@@ -314,7 +314,6 @@ residuals_bestmodel <- residuals(bestmodel)
 par(mfrow=c(2,2))
 plot(bestmodel)
 
-ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_qq_line()
 
 ```
 
@@ -348,8 +347,10 @@ cat("H0: The population sample follows a normal distribution.
 # 2. Normality Assumption: Shapiro-Wilk normality test
 shapiro.test(residuals(bestmodel))
 
-cat(" Given that p-value = 0.006998 which tells us that the residuals are not perfectly normally distributed, we reject the null hypothesis at 0.05 significant level.")
+cat(" Given that p-value = 0.8049 which tells us that the residuals are perfectly normally distributed, we fail to reject the null hypothesis at 0.05 significant level.")
 
+
+ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_qq_line()
 
 ```
 
@@ -357,59 +358,44 @@ cat(" Given that p-value = 0.006998 which tells us that the residuals are not pe
 
 
 ```{r}
-#quadmodel <- lm(Concrete_compressive_strength ~ Cement + I(Cement^2) + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata)
-#summary(quadmodel)$adj.r.squared
-#summary(quadmodel)
 
-#bptest(quadmodel)
+```
 
-bc=boxcox(bestmodel,lambda=seq(-1,1))
+```{r}
+# 3. FOR MULTICOLLINEARITY: Variance Inflation Factors (VIF)
+
+#Since our best model is a higher order model, we will perform the VIF on the first order model instead of the higher order model.
+
+firstordermodel = lm(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Water+Age, data=concretedata)
+
+vif(firstordermodel)
+
+imcdiag(firstordermodel, method="VIF")
+
+
+#Performing it on our best model gives us multicollinearity as seen below
  
-bestlambda=bc$x[which(bc$y==max(bc$y))]
-bestlambda
-
-bcmodel = lm((((Concrete_compressive_strength ^ 0.6767677)-1)/0.6767677) ~ Cement + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata) 
-
-summary(bcmodel)
-
-bptest(bcmodel)
-
-
-# Extract residuals from the best model
-residuals_bcmodel <- residuals(bcmodel)
-
-# 1. Linearity Assumption: Residual plots
-par(mfrow=c(2,2))
-plot(bcmodel)
-
-shapiro.test(residuals(bcmodel))
-
-ggplot(data = concretedata, aes(sample=bcmodel$residuals)) + stat_qq() + stat_qq_line()
-
-```
-
-```{r}
-#cubic <- lm(Concrete_compressive_strength ~ Cement + I(Cement^2) + I(Cement^3)+ Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata)
-
-#summary(cubic)$adj.r.squared
-#summary(cubic)
-
-#bptest(cubic)
-
-```
-
-```{r}
-#individual t-test
-coef_test <- summary(bestmodel)$coefficients[, c("Estimate", "Std. Error", "t value", "Pr(>|t|)")]
-coef_test
+imcdiag(bestmodel, method="VIF")
 
 ```
 
 ```{r}
 
-#bptest
+# 4. Outliers: Cook’s distance and leverage
+
+# Rewrite the said model
+bestmodel <- lm(Concrete_compressive_strength ~ Cement + Blast_Furnace_Slag + Water + poly(Age, 2, raw = TRUE) + Cement:Blast_Furnace_Slag, data = concretedata)
+
+residuals <- residuals(bestmodel)
+
+# Create a boxplot for residuals
+boxplot(residuals, main = "Residuals Boxplot", ylab = "Residuals")
+plot(bestmodel, which = 4)
+
+```
 
 
+```{r}
 
 
 ```
@@ -417,15 +403,7 @@ coef_test
 
 ```{r}
 
-# 4. Multicollinearity: Variance Inflation Factors (VIF)
 
-
-```
-
-
-```{r}
-
-# 5. Outliers: Cook’s distance and leverage
 
 
 ```
