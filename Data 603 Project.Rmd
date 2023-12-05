@@ -280,18 +280,29 @@ bestmodel = lm(Concrete_compressive_strength~Cement + Blast_Furnace_Slag + Water
 summary(bestmodel)
 ```
 
+After we have applied a high-order transformation on the Age predictor variable the interaction term Cement:Age turned out to be insignificant in predicting the response variable, so we will be dropping this.
+
+```{r}
+bestmodel = lm(Concrete_compressive_strength~Cement + Blast_Furnace_Slag + Water + poly(Age,2,raw=T) + Cement:Blast_Furnace_Slag, data=concretedata)
+summary(bestmodel)
+```
+
+
+
 Comparing the regression model that includes only interaction terms and the regression model that includes both interaction terms and high-order model:  
 Best regression model only interaction terms:  
 * RMSE = 8.071  
 * Adjusted R-squared = 0.6778
 
 Best regression model with interaction terms and high-order model:  
-* RMSE = 7.393  
-* Adjusted R-squared = 0.7297
+* RMSE = 7.376  
+* Adjusted R-squared = 0.731
 
-We can infer that the regression model that includes both interaction terms and high-order model is better.
+We can infer that the regression model that includes both interaction terms and high-order model (all significant) is better.
 
 **This is the best model after using the different regression selection procedures and including both interaction terms and high-order model**
+
+$\widehat{Concrete\_compressive\_strength}$ = 25.3809 + (0.0775459+0.0003171Blast_Furnace_Slag)Cement + (0.0065590+0.0003171)Blast_Furnace_Slag + 0.8578Age - 0.0050Age^2
 
 
 ## Checking the Regression Assumptions
