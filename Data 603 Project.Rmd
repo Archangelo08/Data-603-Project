@@ -10,6 +10,47 @@ header-includes: \usepackage{fvextra} \DefineVerbatimEnvironment{Highlighting}{V
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r, include=FALSE}
+library(binom)
+library(car)
+library(collapsibleTree)
+library(dbplyr)
+library(dplyr)
+library(EnvStats)
+library(ggformula)
+library(ggplot2)
+library(gmodels)
+library(htmltools)
+library(ISLR)
+library(knitr)
+library(lawstat)
+library(markdown)
+library(mosaic)
+library(mdsr)
+library(mosaicData)
+library(nycflights13)
+library(olsrr)
+library(plyr)
+library(purrr)
+library(plotly)
+library(resampledata)
+library(rmarkdown)
+library(rpart)
+library(rpart.plot)
+library(rvest)
+library(SDaA)
+library(shiny)
+library(stringi)
+library(tibble)
+library(tidyr)
+library(tidyselect)
+library(tinytex)
+library(yaml)
+library(shiny)
+library(leaps)
+library(GGally)
+```
+
 # Chapter 1: Introduction
 
 1.1 Motivation
@@ -54,48 +95,211 @@ knitr::opts_chunk$set(echo = TRUE)
 3.1 Results
 * What do my results indicate? Do you have any unexpected results?
 
+## Fitting the Full model
+
 ```{r}
-library(readr)
-# Load the dataset from water.csv
-concretedata <- read_csv("Concrete_Data_file.csv")
-
-
+concretedata = read.csv("https://raw.githubusercontent.com/Archangelo08/Data-603-Project/main/cleanedconc_data.csv", header=TRUE)
 head(concretedata, 6)
 tail(concretedata, 5)
-
 ```
 
+Creating the Full model:
 
 ```{r}
-
-# Check the structure of the data
-#str(concretedata)
-
-
-# Fit a multiple regression model
-fullmodel <- lm(Concrete_compressive_strength ~ Cement + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Coarse_Aggregate + Fine_Aggregate + Age_by_day, data = concretedata)
-
+fullmodel = lm(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Fly_Ash+Water+Superplasticizer+Coarse_Aggregate+Fine_Aggregate+Age, data=concretedata)
 summary(fullmodel)
-
 ```
 
-```{r}
+**Choosing the Best model using the following regression procedures:**  
+* Stepwise Regression Procedure  
+* Backward Elimination Procedure  
+* Forward Selection Procedure  
+* All-Possible-Regression Selection Procedure
 
-library(olsrr)
-#To show the best model
-stepfullmodel=ols_step_both_p(fullmodel, pent =0.05, prem =0.1, details=FALSE)
+
+Using **Stepwise Regression Procedure**:
+
+```{r}
+stepfullmodel=ols_step_both_p(fullmodel, pent=0.05, prem=0.1, details=FALSE)
 summary(stepfullmodel$model)
-
-
 ```
 
-
+Using **Backward Elimination Procedure**:
 
 ```{r}
-# Load necessary libraries
-library(ggplot2)
-library(car)
+backfullmodel = ols_step_backward_p(fullmodel, prem=0.1, details=FALSE)
+summary(backfullmodel$model)
+```
 
+By using the Backward Elimination Procedure, it provides the following first-order regression model:  
+$\beta_{0}+\beta_{1}Cement+\beta_{2}Blast\_Furnace\_Slag+\beta_{3}Water+\beta_{4}Fine\_Aggregate+\beta_{5}Age$. However, the p-value of Fine_Aggregate is > 0.05, so this will be dropped from the model. 
+
+Using **Forward Selection Procedure**
+
+```{r}
+forwardfullmodel = ols_step_forward_p(fullmodel, penter=0.05, details=FALSE)
+summary(forwardfullmodel$model)
+```
+
+Using **All-Possible-Regression selection procedure**:
+
+```{r}
+best_subset = regsubsets(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Fly_Ash+Water+Superplasticizer+Coarse_Aggregate+Fine_Aggregate+Age, 
+```
+
+```{r}
+best_subset = regsubsets(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Fly_Ash+Water+Superplasticizer+Coarse_Aggregate+Fine_Aggregate+Age, data=concretedata, nv=8)
+summary(best_subset)
+```
+
+```{r}
+reg_summary = summary(best_subset)
+rsquare = c(reg_summary$rsq)
+cp = c(reg_summary$cp)
+AdjustedR = c(reg_summary$adjr2)
+RMSE = c(reg_summary$rss)
+BIC = c(reg_summary$bic)
+cbind(rsquare,cp,BIC,RMSE,AdjustedR)
+```
+
+```{r}
+par(mfrow=c(3,2))
+plot(reg_summary$cp,type="o",pch=10,xlab="Number of Variables",ylab="Cp")
+plot(reg_summary$bic,type="o",pch=10,xlab="Number of Variables",ylab="BIC")
+plot(reg_summary$rsq,type="o",pch=10,xlab="Number of Variables",ylab="R^2")
+plot(reg_summary$rss,type="o",pch=10,xlab="Number of Variables",ylab="RMSE")
+plot(reg_summary$adjr2,type="o",pch=10,xlab="Number of Variables",ylab="Adjusted R^2")
+```
+
+Based on the output above, we'll be selecting 4 subset of predictor variables namely:  
+* Cement  
+* Blast_Furnace_Slag  
+* Water  
+* Age  
+
+**Summary of best predictor variables selected by the different Regression selection procedures above:**
+
+Stepwise:  
+* Age  
+* Cement  
+* Blast_Furnace_Slag  
+* Water
+
+Backward Elimination:  
+* Cement  
+* Blast_Furnace_Slag  
+* Water  
+* Age  
+
+Forward Selection:  
+* Age  
+* Cement  
+* Blast_Furnace_Slage  
+* Water  
+
+All-Possible-Regression:  
+* Cement  
+* Blast_Furnace_Slag  
+* Water  
+* Age  
+
+With these results, our **best first-order regression model** is the following:
+
+```{r}
+bestfirstorder = lm(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Water+Age, data=concretedata)
+summary(bestfirstorder)
+```
+
+## Checking for Interactions and High-order Model
+
+### Intearction terms
+
+```{r}
+bestFOinterac = lm(Concrete_compressive_strength~(Cement+Blast_Furnace_Slag+Water+Age)^2, data=concretedata)
+summary(bestFOinterac)
+```
+
+Using partial T test to drop interaction terms that are not significant in predicting the response variable, with $\alpha = 0.05$, the only interaction terms that are significant are the following:  
+* Cement:Blast_Furnace_Slag  
+* Cement:Age  
+
+```{r}
+bestFOredinterac = lm(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Water+Age+Cement:Blast_Furnace_Slag+Cement:Age, data=concretedata)
+summary(bestFOredinterac)
+```
+
+Comparing the best first-order model with the same regression model, but with interaction terms (significant only):  
+Best First-order regression model:  
+* RMSE = 8.39  
+* Adjusted R-squared = 0.6519  
+
+Best First-order regression model, including significant interaction terms:  
+* RMSE = 8.071  
+* Adjusted R-squared = 0.6778
+
+**We can infer that the best first-order model that includes significant interaction terms is better.**
+
+### High-order model
+
+```{r}
+bestFOconcretedata = data.frame(
+  concretedata$Concrete_compressive_strength,
+  concretedata$Cement,
+  concretedata$Blast_Furnace_Slag,
+  concretedata$Water,
+  concretedata$Age)
+
+ggpairs(bestFOconcretedata,
+        lower=list(continuous="smooth_loess",combo="facethist",discrete="facetbar",na="na"), progress=FALSE)
+```
+
+Based on the ggpairs matrix visual, the predictor variable that potentially supports high-order model are:  
+* Blast_Furnace_Slag
+* Age (maybe)
+
+Let's create the regression model that includes high-order model:
+
+```{r}
+secondordermodel = lm(Concrete_compressive_strength~Cement + poly(Blast_Furnace_Slag,2,raw=T) + Water + poly(Age,2,raw=T) + Cement:Blast_Furnace_Slag + Cement:Age, data=concretedata)
+summary(secondordermodel)
+```
+
+Based on the output above, transforming Blast_Furnace_Slag predictor variable into a high-order model turned out to be not significant in predicting the response variable. On the other hand, Age is. Let's check if transforming Age into its third order is still significant:
+
+```{r}
+thirdordermodel = lm(Concrete_compressive_strength~Cement + Blast_Furnace_Slag + Water + poly(Age,3,raw=T) + Cement:Blast_Furnace_Slag + Cement:Age, data=concretedata)
+summary(thirdordermodel)
+```
+
+It turns out transforming Age into its third model is not significant with p value > 0.05. So, we'll stop at its second order model.
+
+**This is the best regression model, including interaction terms and high-order model:**
+
+```{r}
+bestmodel = lm(Concrete_compressive_strength~Cement + Blast_Furnace_Slag + Water + poly(Age,2,raw=T) + Cement:Blast_Furnace_Slag + Cement:Age, data=concretedata)
+summary(bestmodel)
+```
+
+Comparing the regression model that includes only interaction terms and the regression model that includes both interaction terms and high-order model:  
+Best regression model only interaction terms:  
+* RMSE = 8.071  
+* Adjusted R-squared = 0.6778
+
+Best regression model with interaction terms and high-order model:  
+* RMSE = 7.393  
+* Adjusted R-squared = 0.7297
+
+We can infer that the regression model that includes both interaction terms and high-order model is better.
+
+**This is the best model after using the different regression selection procedures and including both interaction terms and high-order model**
+
+
+## Checking the Regression Assumptions
+
+**Linearity Assumption**
+
+*You need to check this later*
+```{r}
 # Extract residuals from the best model
 residuals_bestmodel <- residuals(bestmodel)
 
@@ -106,6 +310,24 @@ plot(bestmodel)
 ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_qq_line()
 
 ```
+
+**Equal Variance Assumption**
+
+Defining the Hypothesis test:
+
+$$
+\begin{aligned}
+H_{0} &: \text{Heteroscedasticity does not exist} \\
+H_{A} &: \text{Heteroscedasticity does exist}
+\end{aligned}
+$$
+
+Using the Breusch-Pagan test to check for Heteroscedasticity:
+
+```{r}
+bptest(bestmodel)
+```
+
 
 
 ```{r}
@@ -125,15 +347,7 @@ cat(" Given that p-value = 0.006998 which tells us that the residuals are not pe
 ```
 
 
-```{r}
 
-cat("Null Hypothesis: heteroscedasticity is not present
-\n Alternative Hypothesis: Heteroscedasticity is present \n")
-
-# 3. Equal Variance Assumption (Heteroscedasticity): Breusch-Pagan test
-bptest(bestmodel)
-
-```
 
 ```{r}
 #quadmodel <- lm(Concrete_compressive_strength ~ Cement + I(Cement^2) + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata)
@@ -177,70 +391,6 @@ ggplot(data = concretedata, aes(sample=bcmodel$residuals)) + stat_qq() + stat_qq
 
 ```
 
-
-```{r}
-
-
-```
-
-
-```{r}
-
-```
-
-```{r}
-
-
-```
-
-```{r}
-
-
-
-```
-
-
-```{r}
-
-
-
-```
-
-
-```{r}
-
-
-```
-
-
-
-```{r}
-
-
-```
-
-
-```{r}
-
-
-```
-
-
-```{r}
-
-
-```
-
-```{r}
-
-# Create interaction terms
-
-
-
-
-
-```
-
 ```{r}
 #individual t-test
 coef_test <- summary(bestmodel)$coefficients[, c("Estimate", "Std. Error", "t value", "Pr(>|t|)")]
@@ -257,12 +407,6 @@ coef_test
 
 ```
 
-```{r}
-
-
-
-
-```
 
 ```{r}
 
