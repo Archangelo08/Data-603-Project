@@ -1,0 +1,297 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+
+```{r}
+library(readr)
+# Load the dataset from water.csv
+cleandata <- read_csv("cleanedconc_data.csv")
+
+
+head(cleandata, 6)
+tail(cleandata, 5)
+
+
+
+```
+
+
+```{r}
+```
+
+
+
+
+
+```{r}
+
+# Check the structure of the data
+#str(concretedata)
+
+
+# Fit a multiple regression model
+fullmodel <- lm(Concrete_compressive_strength ~ Cement + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Coarse_Aggregate + Fine_Aggregate + Age, data = cleandata)
+
+summary(fullmodel)
+
+```
+
+```{r}
+
+library(olsrr)
+#To show the best model
+stepfullmodel=ols_step_both_p(fullmodel, pent =0.05, prem =0.1, details=FALSE)
+summary(stepfullmodel$model)
+
+
+```
+
+
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(car)
+
+bestmodel <- lm(Concrete_compressive_strength ~ Cement + Age + Blast_Furnace_Slag + Water, data = cleandata)
+
+# 1. Linearity Assumption: Residual plots
+par(mfrow=c(2,2))
+plot(bestmodel)
+
+residuals_bestmodel <- residuals(bestmodel)
+
+
+#Residual plot for linearity assumption
+ggplot(cleandata, aes(x = Concrete_compressive_strength, y = residuals_bestmodel)) +
+  geom_point() +
+  geom_smooth(method = "loess", se = FALSE, color = "red") +
+  labs(title = "Residuals vs. Fitted Values",
+       x = "Fitted Values",
+       y = "Residuals")
+
+
+
+#ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_qq_line()
+
+```
+
+
+```{r}
+library(mctest)
+library(lmtest)
+library(MASS)
+
+cat("H0: The population sample follows a normal distribution.
+    \nHA: The population sample does not follow a normal distribution. \n")
+
+# 2. Normality Assumption
+# Perform Shapiro-Wilk normality test
+shapiro_test_result <- shapiro.test(residuals(bestmodel))
+shapiro_test_result
+
+
+cat(" Given that p-value = 0.102 which tells us that the residuals are normally distributed, we fail to reject the null hypothesis at 0.05 significant level and agree that the sample does follow a normal distribution.")
+
+
+```
+
+
+
+
+
+
+```{r}
+
+cat("Null Hypothesis: heteroscedasticity is not present
+\n Alternative Hypothesis: Heteroscedasticity is present \n")
+
+# 3. Equal Variance Assumption (Heteroscedasticity): Breusch-Pagan test
+bptest(bestmodel)
+
+cat("The p-value = 0.0001059 which is less than the significance level. Therefore, we reject the null hypothesis.") #This suggests that heteroscedasticity may be present in the population, indicating that the variance of the residuals may not be constant across all levels of the predictors.
+
+```
+
+#TO REMOVE THE HETEROSCEDASTICITY USING Weighted Least Squares (WLS)
+```{r}
+
+# Calculate weights based on the squared residuals
+weights <- 1 / residuals(bestmodel)^2
+
+# Fit the WLS model
+wls_model <- lm(
+  Concrete_compressive_strength ~ Cement + Age + Blast_Furnace_Slag + Water, 
+  data = cleandata, 
+  weights = weights
+)
+bptest(wls_model)
+shapiro.test(residuals(wls_model))
+
+```
+
+
+```{r}
+#quadmodel <- lm(Concrete_compressive_strength ~ Cement + I(Cement^2) + Blast_Furnace_Slag + Fly_Ash + Water + Superplasticizer + Age_by_day, data = concretedata)
+#summary(quadmodel)$adj.r.squared
+#summary(quadmodel)
+
+#bptest(quadmodel)
+
+bc=boxcox(bestmodel,lambda=seq(-1,1))
+ 
+bestlambda=bc$x[which(bc$y==max(bc$y))]
+bestlambda
+
+bcmodel = lm((((Concrete_compressive_strength ^ bestlambda)-1)/bestlambda) ~ Cement + Age + Blast_Furnace_Slag + Water, 
+data = cleandata) 
+
+summary(bcmodel)
+
+bptest(bcmodel)
+
+
+# Extract residuals from the best model
+residuals_bcmodel <- residuals(bcmodel)
+
+# 1. Linearity Assumption: Residual plots
+par(mfrow=c(2,2))
+plot(bcmodel)
+
+shapiro.test(residuals(bcmodel))
+
+ggplot(data = cleandata, aes(sample=bcmodel$residuals)) + stat_qq() + stat_qq_line()
+
+```
+
+```{r}
+
+
+```
+
+
+```{r}
+
+
+
+```
+
+
+```{r}
+
+```
+
+```{r}
+
+
+```
+
+```{r}
+
+
+
+```
+
+
+```{r}
+
+
+
+```
+
+
+```{r}
+
+
+```
+
+
+
+```{r}
+
+
+```
+
+
+```{r}
+
+
+```
+
+
+```{r}
+
+
+```
+
+```{r}
+
+# Create interaction terms
+
+
+
+
+
+```
+
+```{r}
+#individual t-test
+coef_test <- summary(bestmodel)$coefficients[, c("Estimate", "Std. Error", "t value", "Pr(>|t|)")]
+coef_test
+
+```
+
+```{r}
+
+#bptest
+
+
+
+
+```
+
+```{r}
+
+
+
+
+```
+
+```{r}
+
+# 4. Multicollinearity: Variance Inflation Factors (VIF)
+
+
+```
+
+
+```{r}
+
+# 5. Outliers: Cook’s distance and leverage
+
+
+```
+
+
+# Chapter 4: Conclusion and Discussion
+
+4.1 Approach
+* Overall, is the approach we took promising? Please elaborate. What different approach or variant of this approach is better?
+
+4.2 Future Work
+What should follow-up work be done next?
+
+
+
+
+
