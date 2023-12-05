@@ -401,10 +401,10 @@ plot(bestmodel, which = 4)
 
 # Make sure the variable names match those in your original model
 new_data <- data.frame(
-  Cement = c(168.0),
-  Blast_Furnace_Slag = c(42.1),
-  Water = c(121.8),
-  Age = c(3)
+  Cement = c(213.8),
+  Blast_Furnace_Slag = c(98.1),
+  Water = c(181.7),
+  Age = c(14)
   
 )
 
