@@ -396,6 +396,22 @@ plot(bestmodel, which = 4)
 
 
 ```{r}
+#Prediction
+
+
+# Make sure the variable names match those in your original model
+new_data <- data.frame(
+  Cement = c(168.0),
+  Blast_Furnace_Slag = c(42.1),
+  Water = c(121.8),
+  Age = c(3)
+  
+)
+
+# Use the model to make predictions
+predictions <- predict(bestmodel, newdata = new_data, interval = "predict")
+
+print(predictions)
 
 
 ```
