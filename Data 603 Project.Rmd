@@ -311,9 +311,12 @@ $\widehat{Concrete\_compressive\_strength}$ = 25.3809 + (0.0775459+0.0003171Blas
 residuals_bestmodel <- residuals(bestmodel)
 
 # 1. Linearity Assumption: Residual plots
-par(mfrow=c(2,2))
-plot(bestmodel)
+#par(mfrow=c(2,2))
+#plot(bestmodel)
 
+plot(bestmodel, col = "red", which = 1) #for residual vs fitted plot
+plot(bestmodel, col = "blue", which = 2) #for Q-Q Residuals plot
+plot(bestmodel, col = "green", which = 3) #for Scale-Location plot
 
 ```
 
@@ -390,7 +393,7 @@ residuals <- residuals(bestmodel)
 
 # Create a boxplot for residuals
 boxplot(residuals, main = "Residuals Boxplot", ylab = "Residuals")
-plot(bestmodel, which = 4)
+plot(bestmodel, col = "red", which = 4)
 
 ```
 
