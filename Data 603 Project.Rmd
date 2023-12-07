@@ -318,6 +318,8 @@ plot(bestmodel, col = "red", which = 1) #for residual vs fitted plot
 plot(bestmodel, col = "blue", which = 2) #for Q-Q Residuals plot
 plot(bestmodel, col = "green", which = 3) #for Scale-Location plot
 
+ggplot(bestmodel, aes(x=.fitted, y=.resid)) + geom_point() + geom_smooth() + geom_hline(yintercept = 0) + labs(title = "linearity chart")
+
 ```
 
 **Equal Variance Assumption**
@@ -353,12 +355,15 @@ cat(" Given that p-value = 0.8049 which tells us that the residuals are perfectl
 
 ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_qq_line()
 
+
 ```
 
 
 
 
 ```{r}
+
+ggplot(data = concretedata, aes(x = residuals(bestmodel))) +   geom_histogram(binwidth = 4, fill = "blue", color = "black") +   labs(title = "Figure 3 - Histogram for Residuals", x = "Residuals", y = "Count")
 
 ```
 
@@ -402,10 +407,10 @@ plot(bestmodel, col = "red", which = 4)
 
 # Make sure the variable names match those in your original model
 new_data <- data.frame(
-  Cement = c(213.8),
-  Blast_Furnace_Slag = c(98.1),
-  Water = c(181.7),
-  Age = c(14)
+  Cement = c(168.8),
+  Blast_Furnace_Slag = c(42.1),
+  Water = c(121.8),
+  Age = c(3)
   
 )
 
@@ -423,8 +428,6 @@ print(predictions)
 
 
 ```{r}
-
-
 
 
 
