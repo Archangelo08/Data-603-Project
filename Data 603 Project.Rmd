@@ -337,8 +337,6 @@ Using the Breusch-Pagan test to check for Heteroscedasticity:
 bptest(bestmodel)
 ```
 
-
-
 ```{r}
 library(mctest)
 library(lmtest)
