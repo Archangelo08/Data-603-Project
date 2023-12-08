@@ -352,18 +352,20 @@ $\widehat{Concrete\_compressive\_strength}$ = 25.3809 + (0.0775459+0.0003171Blas
 **Linearity Assumption**
 
 ```{r}
-# Extract residuals from the best model
-residuals_bestmodel <- residuals(bestmodel)
 
-# 1. Linearity Assumption: Residual plots
-#par(mfrow=c(2,2))
-#plot(bestmodel)
+residuals <- residuals(bestmodel)
+fitted.values <- fitted(bestmodel)
 
-plot(bestmodel, col = "red", which = 1) #for residual vs fitted plot
-plot(bestmodel, col = "blue", which = 2) #for Q-Q Residuals plot
-plot(bestmodel, col = "green", which = 3) #for Scale-Location plot
+# Create a data frame for ggplot
+residual_plot_data <- data.frame(Fitted = fitted.values, Residuals = residuals)
 
-ggplot(bestmodel, aes(x=.fitted, y=.resid)) + geom_point() + geom_smooth() + geom_hline(yintercept = 0) + labs(title = "linearity chart")
+ggplot(residual_plot_data, aes(x = Fitted, y = Residuals)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  labs(title = "Residual Plot",
+       x = "Fitted Values",
+       y = "Residuals") +
+  theme_minimal()
 
 ```
 
@@ -464,17 +466,7 @@ bcmodel = lm((((Concrete_compressive_strength^0.7373737)-1)/0.7373737)~Cement +
 summary(bcmodel)
 ```
 
-Test for Heteroscedasticity:
 
-```{r}
-bptest(bcmodel)
-```
-
-Test for Normality
-
-```{r}
-shapiro.test(residuals(bcmodel))
-```
 
 **Comparing the best model and the model after Box-Cox transformation**
 
@@ -482,6 +474,63 @@ Best model:
 
 ```{r}
 summary(bestmodel)
+```
+
+
+Model after Box-Cox Transformation:
+
+```{r}
+summary(bcmodel)
+```
+
+If we look at the RMSE, the model after Box-Cox transformation has been significantly reduced to 2.853. Similarly, the RMSE model also increased from 0.731 to 0.7323. With this information, we can conclude that this is our best model despite it not conforming with the Equal Variance Assumption.
+
+
+```{r}
+
+residuals <- residuals(bcmodel)
+fitted.values <- fitted(bcmodel)
+
+# Create a data frame for ggplot
+residual_plot_data <- data.frame(Fitted = fitted.values, Residuals = residuals)
+
+ggplot(residual_plot_data, aes(x = Fitted, y = Residuals)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  labs(title = "Residual Plot",
+       x = "Fitted Values",
+       y = "Residuals") +
+  theme_minimal()
+
+
+```
+
+Test for Heteroscedasticity:
+
+```{r}
+bptest(bcmodel)
+
+plot_data <- data.frame(Fitted = fitted.values, Residuals = residuals)
+
+# Create the Scale-Location plot using ggplot2
+ggplot(plot_data, aes(x = Fitted, y = sqrt(abs(Residuals)))) + geom_point() + geom_smooth(method = "loess", se = FALSE, col = "blue") +  labs(title = "Scale-Location Plot", x = "Fitted Values", y = "Square Root of Standardized Residuals") + theme_minimal()
+
+```
+
+Test for Normality
+
+```{r}
+shapiro.test(residuals(bcmodel))
+
+ggplot(data = concretedata, aes(sample=bcmodel$residuals)) + stat_qq() + stat_qq_line()
+```
+
+**Mutlicollinearity**
+
+```{r}
+#Performing it on our bcmodel gives us multicollinearity as well
+ 
+imcdiag(bcmodel, method="VIF")
 ```
 
 Test for Outliers
@@ -493,14 +542,6 @@ boxplot(residuals, main = "Residuals Boxplot", ylab = "Residuals")
 plot(bcmodel, col = "red", which = 4)
 
 ```
-
-Model after Box-Cox Transformation:
-
-```{r}
-summary(bcmodel)
-```
-
-If we look at the RMSE, the model after Box-Cox transformation has been significantly reduced to 2.853. Similarly, the RMSE model also increased from 0.731 to 0.7323. With this information, we can conclude that this is our best model despite it not conforming with the Equal Variance Assumption.
 
 **Example: Using our best model to predict Concrete Compressive Strength**
 
