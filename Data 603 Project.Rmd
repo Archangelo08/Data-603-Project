@@ -49,52 +49,65 @@ library(yaml)
 library(shiny)
 library(leaps)
 library(GGally)
+library(lmtest)
 ```
 
 # Chapter 1: Introduction
 
-1.1 Motivation
+This project will be fitting a Multiple linear regression model that would predict the Concrete compressive strength of a certain concrete mixture. To achieve this we used a concrete dataset that contains records where each record represents a unique concrete mixture and its associated Concrete compressive strength. It contains 8 potential predictor variables that are all quantitative. 
 
-1.1.1 Context
-* Clearly state the context and applied domain of your project
+To restrict the model and determine the best predictor variables, Stepwise, Backward Elimination, Forward Selection, and All-Possible-Regression procedures were used. After coming up with the best First-order regression model, interaction terms and high-order model are considered.
 
-1.1.2 Problem
-* What problem are we going to address?
+Once we've determined the best possible multiple linear regression model, a diagnostic analysis was conducted to verify if this model meets the different regression assumptions. 
 
-1.2 Objectives
+Before we continue on the regression aspect of this project, it's important to clearly understand what Concrete Compressive strength is all about and why is it important. An article written by Lysett (2019) [2] about concrete strength defined Concrete Compressive Strength as the “most common and well-accepted measurement of concrete strength, which measures the ability of concrete to withstand loads that will decrease the size of the concrete.” This is significantly important since it will determine the quality and longevity of concrete projects as well as the associated costs in meeting concrete strength requirements.
 
-1.2.1 Overview
-* What is the overall intent of the project?
+## Motivation
 
-1.2.2 Goals & Research Questions
-* Clearly state each of your data/visual analytics goals and research questions for data modelling. What are your expectations? Why is this project important to you?
+The motivation behind this topic is we were curious about what makes the most important component of an infrastructure strong. This is the reason we decided to work on this topic.
+
+
+## Objectives
+
+The objectives of this project are the following:  
+* To fit a multiple linear regression model that only contains the statistically significant predictor variables that will predict Concrete Compressive Strength;
+* To ensure that our final regression model conforms with the different regression assumptions;
 
 
 # Chapter 2: Methodology
 
-2.1 Data
-* Briefly describe the data set, source, how it was collected, number of attributes and a brief description of each attribute
+## Data
 
-2.2 Approach
-* What approach are we going to try to address your problems? Why do we think it will work well?
+The dataset used in this project was taken from UC Irvine Machine Learning Repository. It is an open source dataset with the following license: https://creativecommons.org/licenses/by/4.0/legalcode. This dataset contains 1030 records where each record represents a unique concrete-mixture and the associated Concrete compressive strength. It has a total of 9 variables that are all quantitative, namely:  
 
-2.3 Workflow
-* What steps (workflow task list) are required? Which of these steps is particularly hard? What to do if the hard steps don't work out?
+* Cement is a quantitative variable and is measure by kg/m3 mixture  
+* Blast Furnace Slag is a quantitative variable and is measured by kg/m3 mixture  
+* Fly Ash is a quantitative variable and is measured by kg/m3 mixture  
+* Water is a quantitative variable and is measured by kg/m3 mixture  
+* Superplasticizer is a quantitative variable and is measured by kg/m3 mixture   
+* Coarse Aggregate is a quantitative variable and is measured by kg/m3 mixture   
+* Fine Aggregate is a quantitative variable and is measured by kg/m3 mixture   
+* Age is a quantitative variable and is measured by Days (i.e., 365 days (about 12 months) of a year)  
+* Concrete compressive strength is a quantitative variable and is measured by MPa.  
+
+Concrete compressive strength is our response variable and the rest are our predictor variables.
 
 
-2.4 Workload Distribution
-* Briefly describe the group member's workload distribution and responsibilities
+## Workflow
+* Fit all possible predictor variables to the regression model  
+* Use Stepwise, Backward Elimination, Forward Selection, and All-Possible-Regression Selection Procedures to determine the best predictor variables  
+* Consider interaction terms and High-order model.
+* Perform regression diagnostic analysis
+* If the regression model doesn't meet the assumptions perform Box-Cox Transformation
 
 
-
-
-
+## Workload Distribution
+* Fitting the Regression model by determining the best predictor variables using the different Selection procedure methods and considering interaction terms and high-order model - Archangelo Ouano  
+* Performing regression model diagnostic test by verfying if the model conforms with the different regression assumptions - Divine Ahuchogu
 
 
 # Chapter 3: Main Results of the Analysis
 
-3.1 Results
-* What do my results indicate? Do you have any unexpected results?
 
 ## Fitting the Full model
 
@@ -110,6 +123,10 @@ Creating the Full model:
 fullmodel = lm(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Fly_Ash+Water+Superplasticizer+Coarse_Aggregate+Fine_Aggregate+Age, data=concretedata)
 summary(fullmodel)
 ```
+
+Full model Regression Equation:
+
+$\widehat{\text{Concrete Compressive Strength}}$ = $\beta_{0} + \beta_{1}Cement + \beta_{2}Blast\_Furnace\_Slag + \beta_{3}Fly\_Ash + \beta{4}Water + \beta_{5}Superplasticizer + \beta_{6}Coarse\_Aggregate + \beta_{7}Fine\_Aggregate + \beta_{8}Age$  
 
 **Choosing the Best model using the following regression procedures:**  
 * Stepwise Regression Procedure  
@@ -206,6 +223,10 @@ With these results, our **best first-order regression model** is the following:
 bestfirstorder = lm(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Water+Age, data=concretedata)
 summary(bestfirstorder)
 ```
+
+First-Order Regression Equation:
+
+$\widehat{\text{Concrete Compressive Strength}}$ = $\beta_{0} + \beta_{1}Cement + \beta_{2}Blat\_Furnace\_Slag + \beta_{3}Water + \beta_{4}Age$
 
 ## Checking for Interactions and High-order Model
 
@@ -353,19 +374,14 @@ shapiro.test(residuals(bestmodel))
 
 cat(" Given that p-value = 0.8049 which tells us that the residuals are normally distributed, we fail to reject the null hypothesis at 0.05 significant level.")
 
-
 ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_qq_line()
-
-
 ```
 
 This Shapiro-Wilk normality test with a p-value of 0.8049 and the normality graph, gives us an evidence to say that the normality assumption is met by the model.
 
 
 ```{r}
-
 ggplot(data = concretedata, aes(x = residuals(bestmodel))) +   geom_histogram(binwidth = 4, fill = "blue", color = "black") +   labs(title = "Figure 3 - Histogram for Residuals", x = "Residuals", y = "Count")
-
 ```
 This histogram also further shows the conclusion of our normality assumption.
 ```{r}
@@ -379,16 +395,14 @@ vif(firstordermodel)
 
 imcdiag(firstordermodel, method="VIF")
 
-
 #Performing it on our best model gives us multicollinearity as seen below
  
 imcdiag(bestmodel, method="VIF")
-
 ```
 
 From the two multicollinearity test using the VIF method, we can see that on the first order model, that no multicollinearity was detected but we cannot say the same for our best model given that multicollinearity was detected.
-```{r}
 
+```{r}
 # 4. Outliers: Cook’s distance and leverage
 
 # Rewrite the said model
@@ -399,13 +413,11 @@ residuals <- residuals(bestmodel)
 # Create a boxplot for residuals
 boxplot(residuals, main = "Residuals Boxplot", ylab = "Residuals")
 plot(bestmodel, col = "red", which = 4)
-
 ```
 
 We can also see that outliers were detected but they are not influential and as such is ignored.
 ```{r}
 #Prediction
-
 
 # Make sure the variable names match those in your original model
 new_data <- data.frame(
@@ -413,7 +425,6 @@ new_data <- data.frame(
   Blast_Furnace_Slag = c(42.1),
   Water = c(121.8),
   Age = c(3)
-  
 )
 
 confidence_level <- 0.95
@@ -421,28 +432,5 @@ confidence_level <- 0.95
 # Use the model to make predictions
 predictions <- predict(bestmodel, newdata = new_data, interval = "predict", level = confidence_level)
 
-
 print(predictions)
-
-
-
 ```
-
-
-```{r}
-
-
-
-```
-
-
-# Chapter 4: Conclusion and Discussion
-
-4.1 Approach
-* Overall, is the approach we took promising? Please elaborate. What different approach or variant of this approach is better?
-
-4.2 Future Work
-What should follow-up work be done next?
-
-
-
