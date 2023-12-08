@@ -483,11 +483,14 @@ Model after Box-Cox Transformation:
 summary(bcmodel)
 ```
 
-If we look at the RMSE, the model after Box-Cox transformation has been significantly reduced to 2.853. Similarly, the RMSE model also increased from 0.731 to 0.7323. With this information, we can conclude that this is our best model despite it not conforming with the Equal Variance Assumption.
+If we look at the RMSE, the model after Box-Cox transformation has been significantly reduced to 2.853. Similarly, the RMSE model also increased from 0.731 to 0.7323. With this information, we can conclude that this is our best model despite it not conforming with the Equal Variance Assumption. Here's the regression equation:
 
+$\widehat{\text{Concrete Compressive Strength}}$ = 12.82 + (0.03064+0.0001174Blast_Furnace_Slag)Cement + (0.005157+0.0001174Cement)Blast_Furnace_Slag - 0.06905Water + 0.3372Age - 0.001974Age^2
+
+
+**Performing Regression Diagnostic with the new model `bcmodel`**
 
 ```{r}
-
 residuals <- residuals(bcmodel)
 fitted.values <- fitted(bcmodel)
 
@@ -501,8 +504,6 @@ ggplot(residual_plot_data, aes(x = Fitted, y = Residuals)) +
        x = "Fitted Values",
        y = "Residuals") +
   theme_minimal()
-
-
 ```
 
 Test for Heteroscedasticity:
