@@ -50,6 +50,8 @@ library(shiny)
 library(leaps)
 library(GGally)
 library(lmtest)
+library(MASS)
+library(mctest)
 ```
 
 # Chapter 1: Introduction
@@ -120,7 +122,13 @@ tail(concretedata, 5)
 Creating the Full model:
 
 ```{r}
-fullmodel = lm(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Fly_Ash+Water+Superplasticizer+Coarse_Aggregate+Fine_Aggregate+Age, data=concretedata)
+fullmodel = lm(Concrete_compressive_strength~Cement +
+                 Blast_Furnace_Slag +
+                 Fly_Ash+Water +
+                 Superplasticizer +
+                 Coarse_Aggregate +
+                 Fine_Aggregate+Age,
+               data=concretedata)
 summary(fullmodel)
 ```
 
@@ -162,7 +170,15 @@ summary(forwardfullmodel$model)
 Using **All-Possible-Regression selection procedure**:
 
 ```{r}
-best_subset = regsubsets(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Fly_Ash+Water+Superplasticizer+Coarse_Aggregate+Fine_Aggregate+Age, data=concretedata, nv=8)
+best_subset = regsubsets(Concrete_compressive_strength~Cement + 
+                           Blast_Furnace_Slag +
+                           Fly_Ash+Water +
+                           Superplasticizer +
+                           Coarse_Aggregate +
+                           Fine_Aggregate +
+                           Age,
+                         data=concretedata,
+                         nv=8)
 summary(best_subset)
 ```
 
@@ -220,7 +236,11 @@ All-Possible-Regression:
 With these results, our **best first-order regression model** is the following:
 
 ```{r}
-bestfirstorder = lm(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Water+Age, data=concretedata)
+bestfirstorder = lm(Concrete_compressive_strength~Cement +
+                      Blast_Furnace_Slag +
+                      Water +
+                      Age,
+                    data=concretedata)
 summary(bestfirstorder)
 ```
 
@@ -268,7 +288,12 @@ bestFOconcretedata = data.frame(
   concretedata$Age)
 
 ggpairs(bestFOconcretedata,
-        lower=list(continuous="smooth_loess",combo="facethist",discrete="facetbar",na="na"), progress=FALSE)
+        lower=list(
+          continuous="smooth_loess",
+          combo="facethist",
+          discrete="facetbar",
+          na="na"), 
+        progress=FALSE)
 ```
 
 Based on the ggpairs matrix visual, the predictor variable that potentially supports high-order model are:  
@@ -306,7 +331,6 @@ summary(bestmodel)
 ```
 
 
-
 Comparing the regression model that includes only interaction terms and the regression model that includes both interaction terms and high-order model:  
 Best regression model only interaction terms:  
 * RMSE = 8.071  
@@ -327,7 +351,6 @@ $\widehat{Concrete\_compressive\_strength}$ = 25.3809 + (0.0775459+0.0003171Blas
 
 **Linearity Assumption**
 
-*You need to check this later*
 ```{r}
 # Extract residuals from the best model
 residuals_bestmodel <- residuals(bestmodel)
@@ -361,33 +384,34 @@ Using the Breusch-Pagan test to check for Heteroscedasticity:
 bptest(bestmodel)
 ```
 Based on the result from the Breusch-Pagan test p-value, we can say that there is heteroscedasticity in the model and conclude that the equal variance assumption is not met by the model.
+
+
+**Normality Assumption**
+
+$$
+\begin{aligned}
+H_{0} &: \text{The data are significantly normally distributed} \\
+H_{A} &: \text{The data are not significantly normally distributed}
+\end{aligned}
+$$
 ```{r}
-library(mctest)
-library(lmtest)
-library(MASS)
-
-cat("H0: The population sample follows a normal distribution.
-    \n HA: The population sample does not follow a normal distribution. \n")
-
-# 2. Normality Assumption: Shapiro-Wilk normality test
+# Shapiro-Wilk normality test
 shapiro.test(residuals(bestmodel))
-
-cat(" Given that p-value = 0.8049 which tells us that the residuals are normally distributed, we fail to reject the null hypothesis at 0.05 significant level.")
 
 ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_qq_line()
 ```
 
 This Shapiro-Wilk normality test with a p-value of 0.8049 and the normality graph, gives us an evidence to say that the normality assumption is met by the model.
 
-
 ```{r}
 ggplot(data = concretedata, aes(x = residuals(bestmodel))) +   geom_histogram(binwidth = 4, fill = "blue", color = "black") +   labs(title = "Figure 3 - Histogram for Residuals", x = "Residuals", y = "Count")
 ```
 This histogram also further shows the conclusion of our normality assumption.
-```{r}
-# 3. FOR MULTICOLLINEARITY: Variance Inflation Factors (VIF)
 
-#Since our best model is a higher order model, we will perform the VIF on the first order model and the higher order model which is our best model.
+**Mutlicollinearity**
+
+```{r}
+# Since our best model is a higher order model, we will perform the VIF on the first order model and the higher order model which is our best model.
 
 firstordermodel = lm(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Water+Age, data=concretedata)
 
@@ -395,16 +419,16 @@ vif(firstordermodel)
 
 imcdiag(firstordermodel, method="VIF")
 
-#Performing it on our best model gives us multicollinearity as seen below
+#P erforming it on our best model gives us multicollinearity as seen below
  
 imcdiag(bestmodel, method="VIF")
 ```
 
-From the two multicollinearity test using the VIF method, we can see that on the first order model, that no multicollinearity was detected but we cannot say the same for our best model given that multicollinearity was detected.
+From the two multicollinearity test using the VIF method, we can see that on the first order model, that no multicollinearity was detected but we cannot say the same for our best model given that multicollinearity was detected. This is expected since we transformed the Age predictor variable into its second order model.
+
+**Outliers**
 
 ```{r}
-# 4. Outliers: Cook’s distance and leverage
-
 # Rewrite the said model
 bestmodel <- lm(Concrete_compressive_strength ~ Cement + Blast_Furnace_Slag + Water + poly(Age, 2, raw = TRUE) + Cement:Blast_Furnace_Slag, data = concretedata)
 
@@ -416,9 +440,11 @@ plot(bestmodel, col = "red", which = 4)
 ```
 
 We can also see that outliers were detected but they are not influential and as such is ignored.
-```{r}
-#Prediction
 
+
+**Example: Using our best model to predict Concrete Compressive Strength**
+
+```{r}
 # Make sure the variable names match those in your original model
 new_data <- data.frame(
   Cement = c(168.8),
