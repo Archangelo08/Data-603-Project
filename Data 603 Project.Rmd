@@ -484,6 +484,15 @@ Best model:
 summary(bestmodel)
 ```
 
+Test for Outliers
+```{r}
+
+residuals <- residuals(bcmodel)
+
+boxplot(residuals, main = "Residuals Boxplot", ylab = "Residuals")
+plot(bcmodel, col = "red", which = 4)
+
+```
 
 Model after Box-Cox Transformation:
 
@@ -498,7 +507,7 @@ If we look at the RMSE, the model after Box-Cox transformation has been signific
 ```{r}
 # Make sure the variable names match those in your original model
 new_data <- data.frame(
-  Cement = c(168.8),
+  Cement = c(168),
   Blast_Furnace_Slag = c(42.1),
   Water = c(121.8),
   Age = c(3)
