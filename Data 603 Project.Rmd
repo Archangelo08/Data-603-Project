@@ -460,3 +460,7 @@ predictions <- predict(bestmodel, newdata = new_data, interval = "predict", leve
 
 print(predictions)
 ```
+
+# References
+[1] I-Cheng Yeh, “Concrete Compressive Strength.” UCI Machine Learning Repository, 1998. doi: 10.24432/C5PK67.  
+[2] Lysett, T. (2019, March 31). Everything You Need to Know About Concrete Strength | Cor-Tuf. https://cortuf.com/everything-you-need-to-know-about-concrete-strength/  
