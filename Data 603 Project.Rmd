@@ -105,7 +105,7 @@ Concrete compressive strength is our response variable and the rest are our pred
 
 ## Workload Distribution
 * Fitting the Regression model by determining the best predictor variables using the different Selection procedure methods and considering interaction terms and high-order model - Archangelo Ouano  
-* Performing regression model diagnostic test by verfying if the model conforms with the different regression assumptions - Divine Ahuchogu
+* Performing regression model diagnostic test by verifying if the model conforms with the different regression assumptions - Divine Ahuchogu
 
 
 # Chapter 3: Main Results of the Analysis
