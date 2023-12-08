@@ -429,9 +429,6 @@ From the two multicollinearity test using the VIF method, we can see that on the
 **Outliers**
 
 ```{r}
-# Rewrite the said model
-bestmodel <- lm(Concrete_compressive_strength ~ Cement + Blast_Furnace_Slag + Water + poly(Age, 2, raw = TRUE) + Cement:Blast_Furnace_Slag, data = concretedata)
-
 residuals <- residuals(bestmodel)
 
 # Create a boxplot for residuals
@@ -440,6 +437,45 @@ plot(bestmodel, col = "red", which = 4)
 ```
 
 We can also see that outliers were detected but they are not influential and as such is ignored.
+
+
+**Applying Box-Cox transformation to fix the Heteroscedasticity issue**
+
+```{r}
+bc=boxcox(bestmodel,lambda=seq(-1,1))
+```
+
+Calculating for $\lambda$
+
+```{r}
+bestlambda=bc$x[which(bc$y==max(bc$y))]
+bestlambda
+```
+
+Transforming the response variable:
+
+```{r}
+bcmodel = lm((((Concrete_compressive_strength^0.7373737)-1)/0.7373737)~Cement +
+               Blast_Furnace_Slag +
+               Water +
+               poly(Age,2,raw=T) +
+               Cement:Blast_Furnace_Slag,
+             data=concretedata)
+summary(bcmodel)
+```
+
+Test for Heteroscedasticity:
+
+```{r}
+bptest(bcmodel)
+```
+
+Test for Normality
+
+```{r}
+shapiro.test(residuals(bcmodel))
+```
+
 
 
 **Example: Using our best model to predict Concrete Compressive Strength**
