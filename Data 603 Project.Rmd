@@ -81,6 +81,7 @@ library(GGally)
 2.3 Workflow
 * What steps (workflow task list) are required? Which of these steps is particularly hard? What to do if the hard steps don't work out?
 
+
 2.4 Workload Distribution
 * Briefly describe the group member's workload distribution and responsibilities
 
@@ -338,7 +339,7 @@ Using the Breusch-Pagan test to check for Heteroscedasticity:
 ```{r}
 bptest(bestmodel)
 ```
-
+Based on the result from the Breusch-Pagan test p-value, we can say that there is heteroscedasticity in the model and conclude that the equal variance assumption is not met by the model.
 ```{r}
 library(mctest)
 library(lmtest)
@@ -350,7 +351,7 @@ cat("H0: The population sample follows a normal distribution.
 # 2. Normality Assumption: Shapiro-Wilk normality test
 shapiro.test(residuals(bestmodel))
 
-cat(" Given that p-value = 0.8049 which tells us that the residuals are perfectly normally distributed, we fail to reject the null hypothesis at 0.05 significant level.")
+cat(" Given that p-value = 0.8049 which tells us that the residuals are normally distributed, we fail to reject the null hypothesis at 0.05 significant level.")
 
 
 ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_qq_line()
@@ -358,7 +359,7 @@ ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_
 
 ```
 
-
+This Shapiro-Wilk normality test with a p-value of 0.8049 and the normality graph, gives us an evidence to say that the normality assumption is met by the model.
 
 
 ```{r}
@@ -366,11 +367,11 @@ ggplot(data = concretedata, aes(sample=bestmodel$residuals)) + stat_qq() + stat_
 ggplot(data = concretedata, aes(x = residuals(bestmodel))) +   geom_histogram(binwidth = 4, fill = "blue", color = "black") +   labs(title = "Figure 3 - Histogram for Residuals", x = "Residuals", y = "Count")
 
 ```
-
+This histogram also further shows the conclusion of our normality assumption.
 ```{r}
 # 3. FOR MULTICOLLINEARITY: Variance Inflation Factors (VIF)
 
-#Since our best model is a higher order model, we will perform the VIF on the first order model instead of the higher order model.
+#Since our best model is a higher order model, we will perform the VIF on the first order model and the higher order model which is our best model.
 
 firstordermodel = lm(Concrete_compressive_strength~Cement+Blast_Furnace_Slag+Water+Age, data=concretedata)
 
@@ -385,6 +386,7 @@ imcdiag(bestmodel, method="VIF")
 
 ```
 
+From the two multicollinearity test using the VIF method, we can see that on the first order model, that no multicollinearity was detected but we cannot say the same for our best model given that multicollinearity was detected.
 ```{r}
 
 # 4. Outliers: Cook’s distance and leverage
@@ -400,7 +402,7 @@ plot(bestmodel, col = "red", which = 4)
 
 ```
 
-
+We can also see that outliers were detected but they are not influential and as such is ignored.
 ```{r}
 #Prediction
 
