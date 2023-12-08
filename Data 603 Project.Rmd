@@ -507,7 +507,7 @@ new_data <- data.frame(
 confidence_level <- 0.95
 
 # Use the model to make predictions
-predictions <- predict(bestmodel, newdata = new_data, interval = "predict", level = confidence_level)
+predictions <- predict(bcmodel, newdata = new_data, interval = "predict", level = confidence_level)
 
 print(predictions)
 ```
